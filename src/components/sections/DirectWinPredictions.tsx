@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Logo from "../layout/Logo";
 
 interface PredictionCard {
   id: string;
@@ -200,7 +201,7 @@ const DirectWinPredictions: React.FC = () => {
   };
 
   const PredictionCard: React.FC<{ card: PredictionCard }> = ({ card }) => (
-    <div className="relative w-64 h-80 rounded-4xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-all duration-300">
+    <div className="relative w-64 h-fit rounded-4xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-all duration-300">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -210,51 +211,37 @@ const DirectWinPredictions: React.FC = () => {
       <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-300" />
 
       {/* Content */}
-      <div className="relative z-10 p-6 h-full flex flex-col items-center justify-between text-white">
+      <div className="relative z-10 px-6 py-10 h-full flex flex-col items-center justify-between text-white">
         {/* Top section with logo */}
-        <div className="flex justify-end">
-          <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-lg px-3 py-1 rounded">
-            MG
-          </div>
-        </div>
 
         {/* Bottom section with content */}
-        <div className="space-y-3  flex items-center justify-center flex-col">
-          <h3 className="text-2xl font-bold">{card.title}</h3>
-          <p className="text-gray-300 text-sm">{card.subtitle}</p>
-          <p className="text-white font-semibold text-lg">{card.accuracy}</p>
-          <button className="bg-white hover:bg-gray-100 text-black font-semibold py-3 px-8 rounded-full text-sm transition-all duration-200 transform hover:scale-105">
-            Bet Now
-          </button>
+        <div className="space-y-4  flex items-center justify-center flex-col text-center">
+          <div className="flex flex-col gap-1 items-center justify-center">
+            <Logo className="w-13" />
+            <h3 className="text-lg underline text-gray-200 ">{card.title}</h3>
+            <p className="text-gray-200 text-sm max-w-40 text-center">
+              {card.subtitle}
+            </p>
+          </div>
+          <div className="flex flex-col gap-1 items-center justify-center">
+            <p className="text-white font-semibold text-lg">{card.accuracy}</p>
+            <button className="bg-white hover:bg-gray-100 text-black font-semibold py-3 px-8 rounded-full text-sm transition-all duration-200 transform hover:scale-105">
+              Bet Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 
   return (
-    <section className="bg-gray-100 py-16">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className=" py-16 relative">
+      <div className="absolute inset-0 z-0">
+        <img src="/bg1.png" alt="" className="h-full w-full bg-cover" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 z-10 relative">
         {/* Header with Navigation Arrows */}
-        <div className="flex items-center justify-center mb-6  sm:gap-10 gap-5">
-          <button
-            onClick={handlePrevious}
-            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
+        <div className="flex items-center justify-center mb-6  sm:gap-10 gap-5 z-10 relative">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Direct Win Predictions For Today
@@ -265,25 +252,6 @@ const DirectWinPredictions: React.FC = () => {
               30 free betting tips markets.
             </p>
           </div>
-
-          <button
-            onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
 
         {/* Tab Navigation */}

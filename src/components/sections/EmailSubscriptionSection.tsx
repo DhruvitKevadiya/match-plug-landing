@@ -26,7 +26,7 @@ const EmailSubscriptionSection: React.FC = () => {
       className="py-20 relative overflow-hidden"
       style={{
         backgroundImage:
-          "linear-gradient(0deg, rgba(16, 16, 16, 0.63), rgba(16, 16, 16, 0.63)), url(/details-ball-sport.jpg)",
+          "linear-gradient(0deg, rgba(16, 16, 16, 0.63), rgba(16, 16, 16, 0.63)), url(/bg4.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

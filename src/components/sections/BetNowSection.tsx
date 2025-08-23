@@ -101,7 +101,7 @@ const BetNowSection: React.FC = () => {
       id: 1,
       bookmaker: {
         name: "SpinBetter",
-        logo: "/spinbetter-logo.png",
+        logo: "/p1.png",
       },
       title: "SPIN BETTER TO GET CASH",
       promoCode: "MATCHPLUG",
@@ -113,7 +113,7 @@ const BetNowSection: React.FC = () => {
       id: 2,
       bookmaker: {
         name: "FairPari",
-        logo: "/fairpari-logo.png",
+        logo: "/p2.png",
       },
       title: "BET NOW AND CLAIM YOUR FREE €430",
       promoCode: "MATCHPLUG",
@@ -128,7 +128,7 @@ const BetNowSection: React.FC = () => {
       className="py-20 relative overflow-hidden"
       style={{
         backgroundImage:
-          "linear-gradient(0deg, rgba(16, 16, 16, 0.63), rgba(16, 16, 16, 0.63)), url(/close-up-three-fans-wearing-sports-clothes.jpg)",
+          "linear-gradient(0deg, rgba(16, 16, 16, 0.63), rgba(16, 16, 16, 0.63)), url(/bg2.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

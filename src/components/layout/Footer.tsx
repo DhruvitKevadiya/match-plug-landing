@@ -88,18 +88,18 @@ const Footer: React.FC = () => {
   ];
 
   const paymentMethods = [
-    { src: "/bitcoin.png", alt: "Bitcoin", width: 100, height: 55 },
-    { src: "/mpesa.png", alt: "M-Pesa", width: 109, height: 65 },
-    { src: "/smartmoney.jpg", alt: "Smart Money", width: 109, height: 65 },
-    { src: "/paypal-payment.png", alt: "PayPal", width: 87, height: 42 },
-    { src: "/skrill-payment.png", alt: "Skrill", width: 87, height: 43 },
+    { src: "/g1.png", alt: "Bitcoin", width: 100, height: 55 },
+    { src: "/g2.png", alt: "M-Pesa", width: 109, height: 65 },
+    { src: "/g3.png", alt: "Smart Money", width: 109, height: 65 },
+    { src: "/g4.png", alt: "PayPal", width: 87, height: 42 },
+    { src: "/g5.png", alt: "Skrill", width: 87, height: 43 },
     {
-      src: "/mastercard-payment.png",
+      src: "/g6.png",
       alt: "Mastercard",
       width: 87,
       height: 59,
     },
-    { src: "/mobilemoney.png", alt: "Mobile Money", width: 87, height: 59 },
+    { src: "/g7.png", alt: "Mobile Money", width: 87, height: 59 },
   ];
 
   return (
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
             <div className="mb-6">
               <div className="bg-white rounded mb-4 p-2 w-fit">
                 <Image
-                  src="/begambleaware.jpg"
+                  src="/footer1.png"
                   alt="BeGambleAware"
                   width={287}
                   height={63}
@@ -202,7 +202,7 @@ const Footer: React.FC = () => {
           <p className="text-lg">© Matchplug.com 2022. All rights reserved.</p>
 
           {/* Trust Badges */}
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <Image
               src="/trust-badges.png"
               alt="Trust Badges"
@@ -210,7 +210,7 @@ const Footer: React.FC = () => {
               height={62}
               className="object-contain"
             />
-          </div>
+          </div> */}
 
           {/* Social Media Icons */}
           <div className="flex gap-4">
@@ -248,7 +248,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* MP Logo at bottom */}
-        <div className="flex justify-center mt-8">
+        {/* <div className="flex justify-center mt-8">
           <Image
             src="/MP.png"
             alt="MatchPlug Logo"
@@ -256,7 +256,7 @@ const Footer: React.FC = () => {
             height={222}
             className="object-contain max-w-full h-auto"
           />
-        </div>
+        </div> */}
       </div>
     </footer>
   );

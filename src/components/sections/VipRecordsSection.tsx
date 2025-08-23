@@ -128,7 +128,7 @@ const VipRecordsSection: React.FC = () => {
         className="relative py-16"
         style={{
           backgroundImage:
-            "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/top-players-premierleague-2025-26-season.jpg)",
+            "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/bg3.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -1,24 +1,16 @@
 import React from "react";
 import Link from "next/link"; // If using Next.js, otherwise use regular anchor tags
+import Logo from "./Logo";
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 border-b border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 border-b border-gray-800">
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <div className="flex items-center">
-                {/* Logo Icon */}
-                <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-xl px-2 py-1 rounded mr-2">
-                  MG
-                </div>
-                {/* Logo Text */}
-                <span className="text-white font-semibold text-lg tracking-wide">
-                  MATCHPLUG
-                </span>
-              </div>
+            <Link href={"/"}>
+              <Logo />
             </Link>
           </div>
 

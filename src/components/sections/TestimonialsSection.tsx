@@ -57,8 +57,7 @@ const TestimonialsSection: React.FC = () => {
         "Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla.",
       author: "John Doe",
       location: "Abuja",
-      image:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/a1.png",
     },
     {
       id: 2,
@@ -66,8 +65,7 @@ const TestimonialsSection: React.FC = () => {
         "Amazing predictions that helped me win consistently. The accuracy is incredible and the support team is very responsive.",
       author: "Sarah Johnson",
       location: "Lagos",
-      image:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/a2.png",
     },
     {
       id: 3,
@@ -75,8 +73,7 @@ const TestimonialsSection: React.FC = () => {
         "I've been using MatchPlug for 6 months now and my betting success has increased by 80%. Highly recommend!",
       author: "Mike Williams",
       location: "Port Harcourt",
-      image:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/a3.png",
     },
     {
       id: 4,
@@ -84,8 +81,7 @@ const TestimonialsSection: React.FC = () => {
         "The VIP package is worth every penny. The personal manager and exclusive tips have transformed my betting strategy.",
       author: "Emma Davis",
       location: "Kano",
-      image:
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/a4.png",
     },
   ];
 

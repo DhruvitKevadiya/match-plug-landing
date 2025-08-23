@@ -1,6 +1,7 @@
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import AmericanSportsSection from "@/components/sections/AmericanSportsSection";
+import BetBuilderSection from "@/components/sections/BetBuilderSection";
 import BetNowSection from "@/components/sections/BetNowSection";
 import DirectWinPredictions from "@/components/sections/DirectWinPredictions";
 import EmailSubscriptionSection from "@/components/sections/EmailSubscriptionSection";
@@ -25,14 +26,15 @@ export default function Home() {
       <AmericanSportsSection />
       <FootballPredictionTable />
       <DirectWinPredictions />
+      <BetBuilderSection />
       <MeetOurExperts />
+      <BetNowSection />
+      <SureWinPredictionSection />
+      <VipRecordsSection />
       <PricingPlans />
       <TestimonialsSection />
       <WhyMatchplug />
       <LatestNewsSection />
-      <BetNowSection />
-      <VipRecordsSection />
-      <SureWinPredictionSection />
       <FAQSection />
       <EmailSubscriptionSection />
       <JoinWinningBettorsSection />

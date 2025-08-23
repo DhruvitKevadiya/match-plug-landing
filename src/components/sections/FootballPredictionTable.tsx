@@ -356,36 +356,44 @@ const FootballPredictionTable: React.FC = () => {
         </div>
 
         {/* Table */}
-        <div className=" overflow-hidden border border-gray-100">
+        <div className=" overflow-hidden ">
           <div className="overflow-x-auto">
-            <table className="w-full rounded-3xl overflow-hidden">
+            <table className="w-full  overflow-hidden ">
               <thead>
-                <tr className="border-b border-black ">
-                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm  rounded-t-3xl bg-white ">
-                    League
+                <tr>
+                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
+                      League
+                    </span>
                   </th>
-                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm rounded-t-3xl bg-white">
-                    Home Team
+                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
+                      Home Team
+                    </span>
                   </th>
-                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm rounded-t-3xl bg-white">
-                    Away Team
+                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
+                      Away Team
+                    </span>
                   </th>
-                  <th className="text-center py-4 px-6 font-semibold text-gray-800 text-sm rounded-t-3xl bg-white">
-                    Prediction
-                  </th>
+                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
+                      Prediction
+                    </span>
+                  </th>{" "}
                 </tr>
               </thead>
-              <tbody>
+              <tbody className=" ">
                 {displayData.map((match, index) => (
                   <tr
                     key={index}
-                    className={`border-b border-x border-gray-300 hover:bg-gray-50 transition-colors duration-150  ${
+                    className={`border-b border-x border-gray-500 hover:bg-gray-50 transition-colors duration-150  ${
                       index === displayData.length - 1
-                        ? "rounded-full bg-red-500"
+                        ? "border- rounded-full  "
                         : ""
                     }`}
                   >
-                    <td className="py-3 px-6 text-sm text-gray-700 bg-[#EDF0F9]">
+                    <td className="py-3 px-6 text-sm text-black font-medium bg-[#EDF0F9]">
                       {match.league}
                     </td>
                     <td className="px-6 bg-[#F4F6FB]">

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 
 interface Match {
   id: number;
@@ -64,11 +63,11 @@ const SureWinPredictionSection: React.FC = () => {
     tournament: "AFCON",
     homeTeam: {
       name: "Arsenal",
-      logo: "/arsenal-logo.png",
+      logo: "https://logos-world.net/wp-content/uploads/2020/06/Barcelona-Logo.png",
     },
     awayTeam: {
       name: "Leeds",
-      logo: "/leeds-logo.png",
+      logo: "https://logos-world.net/wp-content/uploads/2020/06/Barcelona-Logo.png",
     },
     date: "2022/01/26",
     time: "17:00",
@@ -123,67 +122,87 @@ const SureWinPredictionSection: React.FC = () => {
 
           {/* Prediction Card */}
           <div
-            className="bg-white/70 backdrop-blur-sm rounded-[51px] p-8 shadow-lg"
+            className="bg-white/70 backdrop-blur-sm rounded-[51px] p-8 shadow-lg flex flex-col"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            {/* Match Header */}
-            <div className="text-center mb-8">
-              <h4 className="text-2xl font-semibold text-black mb-1">
-                {todaysMatch.tournament}
-              </h4>
-              <h5 className="text-lg font-semibold text-black mb-4">
-                {todaysMatch.homeTeam.name} vs {todaysMatch.awayTeam.name}
-              </h5>
-              <div className="w-72 h-px bg-black mb-4 mx-auto"></div>
+            <div className="flex w-full items-center justify-evenly">
+              {" "}
+              <img
+                src={todaysMatch.homeTeam.logo}
+                alt={todaysMatch.homeTeam.name}
+                width={120}
+                height={120}
+                className="object-cover w-32 h-32"
+              />
+              <div className="flex flex-col">
+                {" "}
+                <div className="flex flex-col">
+                  {/* Match Header */}
+                  <div className="text-center mb-8">
+                    <h4 className="text-2xl font-semibold text-black mb-1">
+                      {todaysMatch.tournament}
+                    </h4>
+                    <h5 className="text-lg font-semibold text-black mb-4">
+                      {todaysMatch.homeTeam.name} vs {todaysMatch.awayTeam.name}
+                    </h5>
+                    <div className="w-72 h-px bg-black mb-4 mx-auto"></div>
 
-              <div className="text-sm text-black space-y-1">
-                <p>
-                  {todaysMatch.date} {todaysMatch.time}
-                </p>
-                <p className="font-bold">{todaysMatch.venue}</p>
-                <p className="font-bold">{todaysMatch.weather}</p>
-              </div>
-            </div>
-            <div className="w-40 h-px bg-black mb-4 mx-auto"></div>
-
-            {/* Team Logos and Odds */}
-            <div className="flex items-start justify-between mb-8">
-              {/* Home Team Logo */}
-              <div className="w-32">
-                <Image
-                  src={todaysMatch.homeTeam.logo}
-                  alt={todaysMatch.homeTeam.name}
-                  width={120}
-                  height={120}
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Odds */}
-              <div className="flex-1 mx-8 ">
-                <div className="  ">
-                  <div className="flex gap-10 mx-auto w-fit">
-                    <OddsButton label="1" value={todaysMatch.odds.home} />
-                    <OddsButton label="X" value={todaysMatch.odds.draw} />
-                    <OddsButton label="2" value={todaysMatch.odds.away} />
+                    <div className="text-sm text-black space-y-1">
+                      <p>
+                        {todaysMatch.date} {todaysMatch.time}
+                      </p>
+                      <p className="font-bold">{todaysMatch.venue}</p>
+                      <p className="font-bold">{todaysMatch.weather}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+                <div className="w-40 h-px bg-black mb-4 mx-auto"></div>
+                {/* Team Logos and Odds */}
+                <div className="flex items-start justify-between mb-8">
+                  {/* Home Team Logo */}
+                  {/* <div className="w-32">
+                  <img
+                    src={todaysMatch.homeTeam.logo}
+                    alt={todaysMatch.homeTeam.name}
+                    width={120}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div> */}
 
-              {/* Away Team Logo */}
-              <div className="w-32">
-                <Image
-                  src={todaysMatch.awayTeam.logo}
-                  alt={todaysMatch.awayTeam.name}
-                  width={120}
-                  height={120}
-                  className="object-contain"
-                />
-              </div>
+                  {/* Odds */}
+                  <div className="flex-1 mx-8 ">
+                    <div className="  ">
+                      <div className="flex gap-10 mx-auto w-fit">
+                        <OddsButton label="1" value={todaysMatch.odds.home} />
+                        <OddsButton label="X" value={todaysMatch.odds.draw} />
+                        <OddsButton label="2" value={todaysMatch.odds.away} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Away Team Logo */}
+                  {/* <div className="w-32">
+                  <img
+                    src={todaysMatch.awayTeam.logo}
+                    alt={todaysMatch.awayTeam.name}
+                    width={120}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div> */}
+                </div>{" "}
+              </div>{" "}
+              <img
+                src={todaysMatch.homeTeam.logo}
+                alt={todaysMatch.homeTeam.name}
+                width={120}
+                height={120}
+                className="object-cover w-32 h-32"
+              />
             </div>
-
             {/* Prediction Details */}
-            <div className="bg-white/50 rounded-3xl max-w-xl mx-auto overflow-hidden">
+            <div className="bg-white/50 rounded-3xl max-w-xl mx-auto overflow-hidden w-full">
               <PredictionRow label="Tip" isHeader />
               <div className="border-b border-black">
                 <PredictionRow label={Prediction.tip} />
@@ -200,7 +219,7 @@ const SureWinPredictionSection: React.FC = () => {
         </div>
 
         {/* Records Section */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 w-full ">
           <div className="inline-flex items-center gap-4  rounded-full px-6 py-3">
             <span className="text-lg text-white">Records</span>
             <div className="flex items-center gap-2">

@@ -106,8 +106,8 @@ const LatestNewsSection: React.FC = () => {
       title: "Top 5 Bets for Today's Games",
       date: "10 Nov 2025",
       author: "John Doe",
-      authorImage: "/author-1.jpg",
-      image: "/soccer-players-action-professional-stadium.jpg",
+      authorImage: "/author.png",
+      image: "/news.png",
       featured: true,
     },
     {
@@ -115,8 +115,8 @@ const LatestNewsSection: React.FC = () => {
       title: "Top 5 Bets for Today's Games",
       date: "10 Nov 2025",
       author: "John Doe",
-      authorImage: "/author-1.jpg",
-      image: "/soccer-players-action-professional-stadium.jpg",
+      authorImage: "/author.png",
+      image: "/news.png",
       featured: true,
     },
     {
@@ -124,21 +124,21 @@ const LatestNewsSection: React.FC = () => {
       title: "Top 5 Bets for Today's Games",
       date: "10 Nov 2025",
       author: "John Doe",
-      authorImage: "/author-1.jpg",
+      authorImage: "/author.png",
     },
     {
       id: 4,
       title: "Top 5 Bets for Today's Games",
       date: "10 Nov 2025",
       author: "John Doe",
-      authorImage: "/author-1.jpg",
+      authorImage: "/author.png",
     },
     {
       id: 5,
       title: "Top 5 Bets for Today's Games",
       date: "10 Nov 2025",
       author: "John Doe",
-      authorImage: "/author-1.jpg",
+      authorImage: "/author.png",
     },
   ];
 
