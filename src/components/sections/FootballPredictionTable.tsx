@@ -267,16 +267,16 @@ const FootballPredictionTable: React.FC = () => {
   );
 
   return (
-    <section className="bg-gray-50 py-12">
+    <section className="bg-[#F4F6FB] py-24">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header with Navigation Arrows */}
-        <div className="flex items-center justify-center mb-6">
+        <div className="flex items-center justify-center mb-6  sm:gap-10 gap-5">
           <button
             onClick={handlePrevious}
-            className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 mr-8"
+            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -294,17 +294,17 @@ const FootballPredictionTable: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               FOOTBALL PREDICTION FOR TODAY
             </h2>
-            <p className="text-gray-600 text-sm md:text-base">
+            <p className="text-gray-600  md:text-lg max-w-2xl">
               Sure Tips and Football Super Tips From The Experts
             </p>
           </div>
 
           <button
             onClick={handleNext}
-            className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 ml-8"
+            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -321,33 +321,33 @@ const FootballPredictionTable: React.FC = () => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-8">
-          <div className="flex bg-gray-200 rounded-full p-1">
+          <div className="flex gap-3 items-center justify-center flex-wrap">
             <button
               onClick={() => handleTabChange("today")}
-              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "today"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               Today
             </button>
             <button
               onClick={() => handleTabChange("yesterday")}
-              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "yesterday"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               Yesterday
             </button>
             <button
               onClick={() => handleTabChange("lastWeek")}
-              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "lastWeek"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               Last Week
@@ -356,21 +356,21 @@ const FootballPredictionTable: React.FC = () => {
         </div>
 
         {/* Table */}
-        <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+        <div className=" overflow-hidden border border-gray-100">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full rounded-3xl overflow-hidden">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm">
+                <tr className="border-b border-black ">
+                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm  rounded-t-3xl bg-white ">
                     League
                   </th>
-                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm">
+                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm rounded-t-3xl bg-white">
                     Home Team
                   </th>
-                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm">
+                  <th className="text-left py-4 px-6 font-semibold text-gray-800 text-sm rounded-t-3xl bg-white">
                     Away Team
                   </th>
-                  <th className="text-center py-4 px-6 font-semibold text-gray-800 text-sm">
+                  <th className="text-center py-4 px-6 font-semibold text-gray-800 text-sm rounded-t-3xl bg-white">
                     Prediction
                   </th>
                 </tr>
@@ -379,20 +379,22 @@ const FootballPredictionTable: React.FC = () => {
                 {displayData.map((match, index) => (
                   <tr
                     key={index}
-                    className={`border-b border-gray-100 hover:bg-gray-50 transition-colors duration-150 ${
-                      index % 2 === 1 ? "bg-gray-50" : "bg-white"
+                    className={`border-b border-x border-gray-300 hover:bg-gray-50 transition-colors duration-150  ${
+                      index === displayData.length - 1
+                        ? "rounded-full bg-red-500"
+                        : ""
                     }`}
                   >
-                    <td className="py-3 px-6 text-sm text-gray-700">
+                    <td className="py-3 px-6 text-sm text-gray-700 bg-[#EDF0F9]">
                       {match.league}
                     </td>
-                    <td className="px-6">
+                    <td className="px-6 bg-[#F4F6FB]">
                       <TeamCell team={match.homeTeam} />
                     </td>
-                    <td className="px-6">
+                    <td className="px-6 bg-[#EDF0F9]">
                       <TeamCell team={match.awayTeam} />
                     </td>
-                    <td className="text-center py-3 px-6">
+                    <td className="text-center py-3 px-6 bg-[#F4F6FB]">
                       <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                         {match.prediction}
                       </span>
@@ -402,13 +404,6 @@ const FootballPredictionTable: React.FC = () => {
               </tbody>
             </table>
           </div>
-        </div>
-
-        {/* Data indicator */}
-        <div className="text-center mt-4 text-sm text-gray-500">
-          Showing {currentIndex + 1}-
-          {Math.min(currentIndex + displayData.length, getCurrentData().length)}{" "}
-          of {getCurrentData().length} predictions
         </div>
       </div>
     </section>

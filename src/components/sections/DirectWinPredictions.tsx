@@ -200,7 +200,7 @@ const DirectWinPredictions: React.FC = () => {
   };
 
   const PredictionCard: React.FC<{ card: PredictionCard }> = ({ card }) => (
-    <div className="relative w-80 h-96 rounded-2xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-all duration-300">
+    <div className="relative w-64 h-80 rounded-4xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-all duration-300">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -210,7 +210,7 @@ const DirectWinPredictions: React.FC = () => {
       <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-300" />
 
       {/* Content */}
-      <div className="relative z-10 p-6 h-full flex flex-col justify-between text-white">
+      <div className="relative z-10 p-6 h-full flex flex-col items-center justify-between text-white">
         {/* Top section with logo */}
         <div className="flex justify-end">
           <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold text-lg px-3 py-1 rounded">
@@ -219,7 +219,7 @@ const DirectWinPredictions: React.FC = () => {
         </div>
 
         {/* Bottom section with content */}
-        <div className="space-y-3">
+        <div className="space-y-3  flex items-center justify-center flex-col">
           <h3 className="text-2xl font-bold">{card.title}</h3>
           <p className="text-gray-300 text-sm">{card.subtitle}</p>
           <p className="text-white font-semibold text-lg">{card.accuracy}</p>
@@ -235,13 +235,13 @@ const DirectWinPredictions: React.FC = () => {
     <section className="bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header with Navigation Arrows */}
-        <div className="flex items-center justify-center mb-6">
+        <div className="flex items-center justify-center mb-6  sm:gap-10 gap-5">
           <button
             onClick={handlePrevious}
-            className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 mr-8"
+            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -256,10 +256,10 @@ const DirectWinPredictions: React.FC = () => {
           </button>
 
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Direct Win Predictions For Today
             </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-2xl">
+            <p className="text-gray-600  md:text-lg max-w-2xl">
               Matchplug is the worlds most wanted hot prediction site with over{" "}
               <br className="hidden md:block" />
               30 free betting tips markets.
@@ -268,10 +268,10 @@ const DirectWinPredictions: React.FC = () => {
 
           <button
             onClick={handleNext}
-            className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 ml-8"
+            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -288,43 +288,43 @@ const DirectWinPredictions: React.FC = () => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="flex bg-gray-200 rounded-full p-1 overflow-x-auto">
+          <div className="flex gap-3 flex-wrap items-center justify-center">
             <button
               onClick={() => handleTabChange("footballBettingTips")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "footballBettingTips"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               Football Betting Tips
             </button>
             <button
               onClick={() => handleTabChange("riskyTipsMarkets")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "riskyTipsMarkets"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               Risky Tips Markets
             </button>
             <button
               onClick={() => handleTabChange("specialTipsMarkets")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "specialTipsMarkets"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               Special Tips Markets
             </button>
             <button
               onClick={() => handleTabChange("americaSportsPicks")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "americaSportsPicks"
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white bla hover:text-gray-800"
               }`}
             >
               America Sports Picks

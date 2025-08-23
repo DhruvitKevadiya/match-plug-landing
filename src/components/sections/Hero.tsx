@@ -1,13 +1,53 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Button from "../ui/Button";
+import { CountdownBox } from "./VipRecordsSection";
+interface CountdownTime {
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 
 const Hero: React.FC = () => {
+  const [countdown, setCountdown] = useState<CountdownTime>({
+    hours: 11,
+    minutes: 1,
+    seconds: 2,
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        let { hours, minutes, seconds } = prev;
+
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else {
+          // Reset timer when it reaches zero
+          hours = 11;
+          minutes = 1;
+          seconds = 2;
+        }
+
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden">
+    <section className="relative  bg-black overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          src="/hero.png"
           alt=""
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         />
@@ -36,7 +76,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 text-center sm:text-start">
+      <div className="relative flex-col pt-48 pb-10 w-full z-10 flex items-center justify-center  px-4 sm:px-6 lg:px-8 text-center sm:text-start">
         <div className=" max-w-3xl mx-auto flex flex-col sm:gap-7 gap-5 ">
           {/* Main Headline */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl  xl:text-5xl font-bold text-white  ">
@@ -50,7 +90,7 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Stats/Features Text */}
-          <p className=" sm:text-lg lg:text-xl text-white   max-w-5xl  bg-white/50">
+          <p className=" sm:text-lg lg:text-xl text-white   max-w-5xl  ">
             80% Accuracy in VIP Tips | Daily Free Predictions | Start Winning
             Today.
           </p>
@@ -59,6 +99,17 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:gap-6 gap-4  ">
             <Button>Subscribe Now</Button>
             <Button variant="secondary">Get Free Tips</Button>
+          </div>
+        </div>{" "}
+        <div className="flex w-full items-center gap-3 pt-36 ">
+          <span className="w-full h-0.5 bg-white/60"></span>
+          <p className=" text-nowrap font-semibold  text-white">
+            Today’s Jackpot Odds Expire in{" "}
+          </p>
+          <div className="flex justify-center gap-3">
+            <CountdownBox value={countdown.hours} label="Hours" />
+            <CountdownBox value={countdown.minutes} label="Minutes" />
+            <CountdownBox value={countdown.seconds} label="Seconds" />
           </div>
         </div>
       </div>
