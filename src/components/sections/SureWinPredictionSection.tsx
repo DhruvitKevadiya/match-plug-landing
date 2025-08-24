@@ -46,7 +46,7 @@ const PredictionRow: React.FC<{
   isHeader?: boolean;
 }> = ({ label, isHeader = false }) => (
   <div
-    className={`py-3 text-center text-lg ${
+    className={`py-2 text-center text-lg ${
       isHeader ? "bg-[#455DBD] text-white rounded-t-lg" : "text-black"
     }`}
   >
@@ -89,7 +89,7 @@ const SureWinPredictionSection: React.FC = () => {
 
   return (
     <section
-      className="py-20 relative overflow-hidden"
+      className="py-16 relative overflow-hidden"
       style={{
         backgroundImage:
           "linear-gradient(0deg, #455DBD, #455DBD), url(/black-marble-patterned-texture-background.jpg)",
@@ -100,11 +100,12 @@ const SureWinPredictionSection: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-6">
+
+        <div className="text-center flex flex-col items-center justify-center mb-10">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-1 max-w-xl">
             Sure Win Prediction Today
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="text-white/80 md:text-lg max-w-xl">
             Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
             turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
             nec fringilla.
@@ -117,12 +118,12 @@ const SureWinPredictionSection: React.FC = () => {
             <h3 className="text-xl font-semibold text-white capitalize mb-4">
               Tip of The Day
             </h3>
-            <div className="w-96 h-px bg-white mx-auto"></div>
+            <div className="w-96 h-px bg-white/70 mx-auto"></div>
           </div>
 
           {/* Prediction Card */}
           <div
-            className="bg-white/70 backdrop-blur-sm rounded-[51px] p-8 shadow-lg flex flex-col"
+            className="bg-white/70 backdrop-blur-sm rounded-[51px] px-8 py-10 shadow-lg flex flex-col"
             style={{ backdropFilter: "blur(2px)" }}
           >
             <div className="flex w-full items-center justify-evenly">
@@ -138,14 +139,16 @@ const SureWinPredictionSection: React.FC = () => {
                 {" "}
                 <div className="flex flex-col">
                   {/* Match Header */}
-                  <div className="text-center mb-8">
-                    <h4 className="text-2xl font-semibold text-black mb-1">
+                  <div className="text-center mb-4">
+                    <h4 className="text-2xl font-bold text-black ">
                       {todaysMatch.tournament}
                     </h4>
-                    <h5 className="text-lg font-semibold text-black mb-4">
-                      {todaysMatch.homeTeam.name} vs {todaysMatch.awayTeam.name}
+                    <h5 className="text-lg font-bold text-black mb-2">
+                      {todaysMatch.homeTeam.name}
+                      <span className="font-normal"> vs </span>{" "}
+                      {todaysMatch.awayTeam.name}
                     </h5>
-                    <div className="w-72 h-px bg-black mb-4 mx-auto"></div>
+                    <div className="w-72 h-px bg-black mb-2 mx-auto"></div>
 
                     <div className="text-sm text-black space-y-1">
                       <p>
@@ -158,7 +161,7 @@ const SureWinPredictionSection: React.FC = () => {
                 </div>
                 <div className="w-40 h-px bg-black mb-4 mx-auto"></div>
                 {/* Team Logos and Odds */}
-                <div className="flex items-start justify-between mb-8">
+                <div className="flex items-start justify-between mb-4">
                   {/* Home Team Logo */}
                   {/* <div className="w-32">
                   <img
@@ -219,7 +222,7 @@ const SureWinPredictionSection: React.FC = () => {
         </div>
 
         {/* Records Section */}
-        <div className="text-center mt-16 w-full ">
+        <div className="text-center mt-8 w-full ">
           <div className="inline-flex items-center gap-4  rounded-full px-6 py-3">
             <span className="text-lg text-white">Records</span>
             <div className="flex items-center gap-2">

@@ -56,7 +56,7 @@ const BetOptionItem: React.FC<{
 );
 
 const BetBuilderCard: React.FC<{ card: BetCard }> = ({ card }) => (
-  <div className="flex gap-5">
+  <div className="flex gap-5 flex-col sm:flex-row">
     <div className="flex flex-col items-center justify-center gap-5">
       <div className="bg-white w-full rounded-[51px] border border-gray-400 shadow-lg p-8 max-w-md">
         {/* Team Logos */}
@@ -126,7 +126,7 @@ const BetBuilderCard: React.FC<{ card: BetCard }> = ({ card }) => (
       {/* <div className="hidden lg:block h-px w-full bg-black mt-16"></div> */}
 
       {/* Options Column */}
-      <div className="hidden lg:flex flex-col justify-center pt-10">
+      <div className=" flex flex-col justify-center pt-10">
         <button className="bg-[#455DBD] text-white px-8 py-2 rounded-full  font-bold mb-8 hover:opacity-90 transition-opacity">
           ODDS : {card.odds}
         </button>
@@ -207,16 +207,16 @@ const BetBuilderSection: React.FC = () => {
         </div>
 
         {/* Bet Cards */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 justify-center">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-28 md:justify-start justify-center">
           {/* First Card with Options */}
-          <div className="flex gap-8">
+          <div className="flex gap-8 lg:justify-start justify-center">
             <BetBuilderCard card={betCards[0]} />
 
             {/* Vertical Divider Line */}
           </div>
 
           {/* Second Card with Options */}
-          <div className="flex gap-8">
+          <div className="flex gap-8 lg:justify-start justify-center">
             <BetBuilderCard card={betCards[1]} />
           </div>
         </div>

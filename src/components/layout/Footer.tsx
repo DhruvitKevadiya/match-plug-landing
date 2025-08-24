@@ -104,8 +104,8 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#272727] text-white">
-      <div className="container mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+      <div className="container max-w-[100rem] mx-auto px-4 pt-16 pb-8">
+        <div className="flex gap-24 mb-12 flex-col xl:flex-row">
           {/* Main Content Section */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
@@ -140,33 +140,11 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <FooterSection title="Quick Links">
-            <div className="space-y-4">
-              {quickLinks.map((link, index) => (
-                <FooterLink key={index} href="#">
-                  {link}
-                </FooterLink>
-              ))}
-            </div>
-          </FooterSection>
-
-          {/* Categories */}
-          <FooterSection title="Categories">
-            <div className="space-y-4">
-              {categories.map((category, index) => (
-                <FooterLink key={index} href="#">
-                  {category}
-                </FooterLink>
-              ))}
-            </div>
-          </FooterSection>
-
-          {/* Information & Contact */}
-          <div>
-            <FooterSection title="Information">
-              <div className="space-y-4 mb-8">
-                {informationLinks.map((link, index) => (
+          <div className="flex gap-12 justify-between w-full md:flex-row flex-col">
+            {/* Quick Links */}
+            <FooterSection title="Quick Links">
+              <div className="space-y-4">
+                {quickLinks.map((link, index) => (
                   <FooterLink key={index} href="#">
                     {link}
                   </FooterLink>
@@ -174,14 +152,41 @@ const Footer: React.FC = () => {
               </div>
             </FooterSection>
 
-            {/* Contact Section */}
-            <FooterSection title="Contact us">
-              <div className="text-base space-y-1">
-                <p>WhatsApp : +1 (307) 218-5698</p>
-                <p>Email : hello@matchplug.com</p>
-                <p>Telegram : @matchplugvip</p>
+            <div className="h- w-px bg-white/40 md:flex hidden"></div>
+
+            {/* Categories */}
+            <FooterSection title="Categories">
+              <div className="space-y-4">
+                {categories.map((category, index) => (
+                  <FooterLink key={index} href="#">
+                    {category}
+                  </FooterLink>
+                ))}
               </div>
             </FooterSection>
+            <div className=" w-px bg-white/40 md:flex hidden"></div>
+
+            {/* Information & Contact */}
+            <div>
+              <FooterSection title="Information">
+                <div className="space-y-4 mb-8">
+                  {informationLinks.map((link, index) => (
+                    <FooterLink key={index} href="#">
+                      {link}
+                    </FooterLink>
+                  ))}
+                </div>
+              </FooterSection>
+
+              {/* Contact Section */}
+              <FooterSection title="Contact us">
+                <div className="text-base space-y-1">
+                  <p>WhatsApp : +1 (307) 218-5698</p>
+                  <p>Email : hello@matchplug.com</p>
+                  <p>Telegram : @matchplugvip</p>
+                </div>
+              </FooterSection>
+            </div>
           </div>
         </div>
 
@@ -202,15 +207,15 @@ const Footer: React.FC = () => {
           <p className="text-lg">© Matchplug.com 2022. All rights reserved.</p>
 
           {/* Trust Badges */}
-          {/* <div className="flex items-center">
+          <div className="flex items-center">
             <Image
-              src="/trust-badges.png"
+              src="/footer2.png"
               alt="Trust Badges"
               width={429}
               height={62}
               className="object-contain"
             />
-          </div> */}
+          </div>
 
           {/* Social Media Icons */}
           <div className="flex gap-4">
@@ -248,15 +253,15 @@ const Footer: React.FC = () => {
         </div>
 
         {/* MP Logo at bottom */}
-        {/* <div className="flex justify-center mt-8">
-          <Image
-            src="/MP.png"
+        <div className="flex justify-center mt-8">
+          {/* <img
+            src="/footer2.png"
             alt="MatchPlug Logo"
             width={1485}
             height={222}
             className="object-contain max-w-full h-auto"
-          />
-        </div> */}
+          /> */}
+        </div>
       </div>
     </footer>
   );

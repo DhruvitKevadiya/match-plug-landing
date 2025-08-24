@@ -32,9 +32,9 @@ const Button: React.FC<ButtonProps> = ({
 
   // Size variants
   const sizeClasses = {
-    sm: "py-2 px-4 text-sm min-w-[160px]",
-    md: "py-2 px-5 sm:text-lg min-w-[220px]",
-    lg: "py-4 px-12 text-xl min-w-[240px]",
+    sm: "pt-2 pb-2.5 px-4 text-sm min-w-[160px]",
+    md: "pt-2 pb-2.5 px-5 sm:text-lg min-w-[220px]",
+    lg: "pt-4 pb-4.5 px-12 text-xl min-w-[240px]",
   };
 
   // Style variants

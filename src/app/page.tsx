@@ -20,25 +20,25 @@ import WhyMatchplug from "@/components/sections/WhyMatchplug";
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <Header />
+      {/* <Header />
       <Hero />
       <FootballPredictionTable />
       <AmericanSportsSection />
       <FootballPredictionTable />
-      <DirectWinPredictions />
-      <BetBuilderSection />
-      <MeetOurExperts />
-      <BetNowSection />
-      <SureWinPredictionSection />
-      <VipRecordsSection />
+      <DirectWinPredictions /> */}
+      {/* <BetBuilderSection /> */}
+      {/* <MeetOurExperts /> */}
+      {/* <BetNowSection /> */}
+      {/* <SureWinPredictionSection /> */}
+      {/* <VipRecordsSection /> */}
       <PricingPlans />
-      <TestimonialsSection />
-      <WhyMatchplug />
-      <LatestNewsSection />
-      <FAQSection />
-      <EmailSubscriptionSection />
-      <JoinWinningBettorsSection />
-      <Footer />
+      {/* <TestimonialsSection /> */}
+      {/* <WhyMatchplug /> */}
+      {/* <LatestNewsSection /> */}
+      {/* <FAQSection /> */}
+      {/* <EmailSubscriptionSection /> */}
+      {/* <JoinWinningBettorsSection /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

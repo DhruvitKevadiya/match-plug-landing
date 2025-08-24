@@ -270,31 +270,31 @@ const FootballPredictionTable: React.FC = () => {
     <section className="bg-[#F4F6FB] py-24">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header with Navigation Arrows */}
-        <div className="flex items-center justify-center mb-6  sm:gap-10 gap-5">
+        <div className="flex items-center justify-center mb-8 sm:gap-20 gap-5">
           <button
             onClick={handlePrevious}
             className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
           >
             <svg
-              className="w-5 h-5"
+              width="27"
+              height="16"
+              viewBox="0 0 27 16"
+              className="w-5 h-5 rotate-180"
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
+                d="M26.7071 8.70711C27.0976 8.31658 27.0976 7.68342 26.7071 7.29289L20.3431 0.928932C19.9526 0.538408 19.3195 0.538408 18.9289 0.928932C18.5384 1.31946 18.5384 1.95262 18.9289 2.34315L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.70711ZM0 8V9H26V8V7H0V8Z"
+                fill="white"
               />
             </svg>
           </button>
 
           <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
               FOOTBALL PREDICTION FOR TODAY
             </h2>
-            <p className="text-gray-600  md:text-lg max-w-2xl">
+            <p className="text-black  md:text-lg max-w-xl">
               Sure Tips and Football Super Tips From The Experts
             </p>
           </div>
@@ -304,27 +304,27 @@ const FootballPredictionTable: React.FC = () => {
             className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
           >
             <svg
-              className="w-5 h-5"
+              width="27"
+              height="16"
+              viewBox="0 0 27 16"
+              className="w-5 h-5 "
               fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
+                d="M26.7071 8.70711C27.0976 8.31658 27.0976 7.68342 26.7071 7.29289L20.3431 0.928932C19.9526 0.538408 19.3195 0.538408 18.9289 0.928932C18.5384 1.31946 18.5384 1.95262 18.9289 2.34315L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.70711ZM0 8V9H26V8V7H0V8Z"
+                fill="white"
               />
             </svg>
           </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-10">
           <div className="flex gap-3 items-center justify-center flex-wrap">
             <button
               onClick={() => handleTabChange("today")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "today"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white bla hover:text-gray-800"
@@ -334,7 +334,7 @@ const FootballPredictionTable: React.FC = () => {
             </button>
             <button
               onClick={() => handleTabChange("yesterday")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "yesterday"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white bla hover:text-gray-800"
@@ -344,7 +344,7 @@ const FootballPredictionTable: React.FC = () => {
             </button>
             <button
               onClick={() => handleTabChange("lastWeek")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "lastWeek"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white bla hover:text-gray-800"
@@ -361,22 +361,22 @@ const FootballPredictionTable: React.FC = () => {
             <table className="w-full  overflow-hidden ">
               <thead>
                 <tr>
-                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
                     <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
                       League
                     </span>
                   </th>
-                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
                     <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
                       Home Team
                     </span>
                   </th>
-                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
                     <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
                       Away Team
                     </span>
                   </th>
-                  <th className="text-left  text-black text-sm font-bold   rounded-t-full bg-white ">
+                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
                     <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
                       Prediction
                     </span>
@@ -393,17 +393,17 @@ const FootballPredictionTable: React.FC = () => {
                         : ""
                     }`}
                   >
-                    <td className="py-3 px-6 text-sm text-black font-medium bg-[#EDF0F9]">
+                    <td className="py-3 px-6 text-sm sm:text-base text-black font-medium bg-[#EDF0F9]">
                       {match.league}
                     </td>
-                    <td className="px-6 bg-[#F4F6FB]">
+                    <td className="px-6 bg-[#F4F6FB] text-sm sm:text-base">
                       <TeamCell team={match.homeTeam} />
                     </td>
-                    <td className="px-6 bg-[#EDF0F9]">
+                    <td className="px-6 bg-[#EDF0F9] text-sm sm:text-base">
                       <TeamCell team={match.awayTeam} />
                     </td>
                     <td className="text-center py-3 px-6 bg-[#F4F6FB]">
-                      <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm  sm:text-base font-semibold">
                         {match.prediction}
                       </span>
                     </td>

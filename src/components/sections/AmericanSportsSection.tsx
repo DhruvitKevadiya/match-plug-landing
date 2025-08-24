@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../ui/Button";
 
 const AmericanSportsSection: React.FC = () => {
   const sportsCategories = ["NBA PICKS", "NFL PICKS", "NHL PICKS", "MLB PICKS"];
@@ -26,9 +27,7 @@ const AmericanSportsSection: React.FC = () => {
 
           {/* Accuracy Badge */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-full px-6 py-2">
-              <span className=" text-black">80% Accuracy</span>
-            </div>
+            <Button>80% Accuracy</Button>
           </div>
         </div>
       </div>

@@ -30,13 +30,13 @@ const BetCard: React.FC<{ card: BetCard }> = ({ card }) => (
       className=" rounded-3xl border border-white h-fit "
       style={{ backgroundColor: card.backgroundColor }}
     >
-      <div className="text-center">
+      <div className="text-center flex items-center justify-center">
         <Image
           src={card.bookmaker.logo}
           alt={card.bookmaker.name}
           width={164}
           height={93}
-          className="object-contain  w-44 h-60"
+          className="object-contain  w-56 h-72"
         />
       </div>
     </div>
@@ -58,17 +58,17 @@ const BetCard: React.FC<{ card: BetCard }> = ({ card }) => (
           <h3 className="text-lg lg:text-xl font-bold text-white uppercase mb-4">
             {card.title}
           </h3>
-          <p className="text-lg lg:text-xl text-white">
+          <p className="text-lg lg:text-xl text-white/80">
             CLAIM WITH PROMO CODE:{" "}
-            <span className="font-bold">{card.promoCode}</span>
+            <span className="font-bold text-white">{card.promoCode}</span>
           </p>
         </div>
 
-        <p className="text-lg lg:text-xl text-white">ODDS : {card.odds}</p>
+        <p className="text-lg lg:text-xl text-white/80">ODDS : {card.odds}</p>
 
-        <p className="text-lg lg:text-xl text-white">
+        <p className="text-lg lg:text-xl text-white/80">
           Todays Bet Slip Code:{" "}
-          <span className="font-bold">{card.betCode}</span>
+          <span className="font-bold text-white">{card.betCode}</span>
         </p>
 
         <button className="bg-white rounded-full px-6 py-2 text-lg lg:text-xl font-bold text-black hover:opacity-90 transition-opacity">
@@ -135,11 +135,12 @@ const BetNowSection: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex flex-col items-center justify-center">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 max-w-4xl mx-auto">
+
+        <div className="text-center flex flex-col items-center justify-center mb-16">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-1 max-w-xl">
             Bet Now On Matchplug Jackpot Betcodes and be a Millionaire
           </h2>
-          <p className="text-lg lg:text-xl text-white max-w-3xl mx-auto">
+          <p className="text-white/80 md:text-lg max-w-xl">
             Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
             turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
             nec fringilla.
@@ -147,7 +148,7 @@ const BetNowSection: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="space-y-12 lg:space-y-16 mb-16 flex lg:flex-row flex-col mx-auto gap-10">
+        <div className="space-y-12 lg:space-y-16 mb-4 flex lg:flex-row flex-col mx-auto gap-10">
           {betCards.map((card) => (
             <div key={card.id} className="flex justify-center">
               <BetCard card={card} />
@@ -157,9 +158,9 @@ const BetNowSection: React.FC = () => {
 
         {/* Telegram Button */}
         <div className="text-center">
-          <button className="bg-white rounded-full px-6 lg:px-8 py-3 lg:py-4 flex items-center gap-3 lg:gap-4 mx-auto hover:opacity-90 transition-opacity">
+          <button className="bg-white rounded-full pl-3 pr-8 py-3 lg:py-2 flex items-center gap-3 lg:gap-4 mx-auto hover:opacity-90 transition-opacity">
             <TelegramIcon />
-            <span className="text-lg lg:text-2xl text-black">
+            <span className="text-lg lg:text-xl text-black">
               Join telegram for more <strong>BETCODES</strong>
             </span>
           </button>

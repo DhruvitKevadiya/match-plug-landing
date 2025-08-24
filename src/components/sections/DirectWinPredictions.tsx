@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Logo from "../layout/Logo";
+import Button from "../ui/Button";
 
 interface PredictionCard {
   id: string;
@@ -219,13 +220,13 @@ const DirectWinPredictions: React.FC = () => {
           <div className="flex flex-col gap-1 items-center justify-center">
             <Logo className="w-13" />
             <h3 className="text-lg underline text-gray-200 ">{card.title}</h3>
-            <p className="text-gray-200 text-sm max-w-40 text-center">
+            <p className="text-gray-200  max-w-40 text-center">
               {card.subtitle}
             </p>
           </div>
-          <div className="flex flex-col gap-1 items-center justify-center">
+          <div className="flex flex-col gap-2 items-center justify-center">
             <p className="text-white font-semibold text-lg">{card.accuracy}</p>
-            <button className="bg-white hover:bg-gray-100 text-black font-semibold py-3 px-8 rounded-full text-sm transition-all duration-200 transform hover:scale-105">
+            <button className="bg-white hover:bg-gray-100 text-black font-bold py-2 px-6 rounded-full  transition-all duration-200 transform hover:scale-105">
               Bet Now
             </button>
           </div>
@@ -241,17 +242,16 @@ const DirectWinPredictions: React.FC = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 z-10 relative">
         {/* Header with Navigation Arrows */}
-        <div className="flex items-center justify-center mb-6  sm:gap-10 gap-5 z-10 relative">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-              Direct Win Predictions For Today
-            </h2>
-            <p className="text-gray-600  md:text-lg max-w-2xl">
-              Matchplug is the worlds most wanted hot prediction site with over{" "}
-              <br className="hidden md:block" />
-              30 free betting tips markets.
-            </p>
-          </div>
+
+        <div className="text-center flex flex-col items-center justify-center mb-6">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+            Direct Win Predictions For Today
+          </h2>
+          <p className="text-black  md:text-lg max-w-xl">
+            Matchplug is the worlds most wanted hot prediction site with over{" "}
+            <br className="hidden md:block" />
+            30 free betting tips markets.
+          </p>
         </div>
 
         {/* Tab Navigation */}

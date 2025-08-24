@@ -14,8 +14,18 @@ const StarRating: React.FC = () => (
   <div className="flex justify-center gap-0.5 mb-1">
     {[...Array(4)].map((_, index) => (
       <div key={index} className="w-4 h-4">
-        <svg fill="white" viewBox="0 0 24 24" className="w-full h-full">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        <svg
+          width="25"
+          height="23"
+          viewBox="0 0 25 23"
+          className="w-full h-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.5 0L15.3064 8.63729H24.3882L17.0409 13.9754L19.8473 22.6127L12.5 17.2746L5.15268 22.6127L7.95911 13.9754L0.611794 8.63729H9.69357L12.5 0Z"
+            fill="white"
+          />
         </svg>
       </div>
     ))}
@@ -29,7 +39,7 @@ const ExpertCard: React.FC<{
 }> = ({ expert, className = "", isOdd = false }) => (
   <div
     className={`relative flex flex-col max-w-48 justify-center items-center  gap-4 ${className} ${
-      isOdd ? "pt-10" : "pb-10"
+      isOdd ? "sm:pt-10" : "sm:pb-10"
     }`}
   >
     {/* Black divider line at top */}
@@ -40,7 +50,7 @@ const ExpertCard: React.FC<{
     <div className="relative ">
       {/* Background image */}
       <div
-        className="w-36 h-36 rounded-3xl border overflow-hidden bg-cover bg-center relative"
+        className="w-40 h-40 rounded-[2rem] border overflow-hidden bg-cover bg-center relative"
         style={{ backgroundImage: `url(${expert.backgroundImage})` }}
       >
         {/* Overlay */}
@@ -57,8 +67,8 @@ const ExpertCard: React.FC<{
     </div>
     {/* Content below image */}
     <div className=" text-center text-sm">
-      <h3 className=" font-semibold text-black ">{expert.name}</h3>
-      <p className=" text-black">{expert.description}</p>
+      <h3 className=" font-bold text-black ">{expert.name}</h3>
+      <p className=" text-black/70 font-medium">{expert.description}</p>
     </div>
   </div>
 );
@@ -111,7 +121,7 @@ const MeetOurExperts: React.FC = () => {
     <section className="py-20 bg-[#F4F6FB]">
       <div className="container w-full flex flex-col items-center justify-center px-4 mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-4">
           <h2 className="text-3xl font-bold text-black mb-8">
             Meet Our Experts Analysts
           </h2>
@@ -142,7 +152,7 @@ const MeetOurExperts: React.FC = () => {
           {/* </div> */}
 
           {/* Mobile/Tablet Layout - Simple grid */}
-          <div className=" flex flex-wrap gap-8 justify-center items-center">
+          <div className=" flex flex-wrap sm:gap-8 gap-12 justify-center items-center">
             {experts.map((expert, index) => (
               <ExpertCard
                 key={expert.id}
@@ -154,9 +164,11 @@ const MeetOurExperts: React.FC = () => {
         </div>
 
         {/* Subscription Button */}
-        <div className="flex justify-center mt-16">
-          <button className="border border-gray-300 rounded-full px-8 py-4 sm:text-lg text-black hover:bg-gray-50 transition-colors">
-            Subscribe to Get Personalized Tips from Our Experts
+        <div className="flex justify-center mt-8">
+          <button className="bg-gradient-to-r from-gray-200 to-gray-400 p-[2px] rounded-full">
+            <span className=" bg-[#F4F6FB] rounded-full px-8 pt-3 pb-3.5 sm:text-lg text-black hover:bg-gray-50 transition-colors">
+              Subscribe to Get Personalized Tips from Our Experts
+            </span>
           </button>
         </div>
       </div>

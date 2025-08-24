@@ -14,7 +14,7 @@ interface CountdownTime {
 
 const ResultIcon: React.FC<{ isWin: boolean }> = ({ isWin }) => (
   <div
-    className={`w-10 h-10 rounded-full flex items-center justify-center ${
+    className={`w-8 h-8 rounded-full flex items-center justify-center ${
       isWin ? "bg-[#03DD3C]" : "bg-[#F63241]"
     }`}
   >
@@ -117,9 +117,9 @@ const VipRecordsSection: React.FC = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Top Dark Section */}
-      <div className="bg-[#111413] py-16">
+      <div className="bg-[#111413] py-8">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-8">VIP Records</h2>
+          <h2 className="text-3xl font-bold text-white ">VIP Records</h2>
         </div>
       </div>
 
@@ -134,7 +134,7 @@ const VipRecordsSection: React.FC = () => {
         }}
       >
         <div className="container mx-auto px-4">
-          <div className="max-w-md mx-auto text-center space-y-8">
+          <div className="max-w-md mx-auto text-center space-y-4">
             {/* Results Section */}
             <div>
               <h3 className="text-2xl font-bold text-white mb-8">Results</h3>
@@ -150,18 +150,18 @@ const VipRecordsSection: React.FC = () => {
               <div className="text-xl font-bold text-[#D03A46] mb-2">
                 {winRate}%
               </div>
-              <div className="text-xl font-bold text-white mb-4">
+              <div className="text-xl font-bold text-white mb-3">
                 Win Rate in the last 30 days
               </div>
             </div>
 
             {/* Today's Odd */}
-            <div className="text-xl text-white mb-6">
+            <div className="text-xl text-white mb-3">
               Todays Odd <span className="font-bold">{todaysOdd}</span>
             </div>
 
             {/* CTA Button */}
-            <button className="bg-[#F63241] text-white px-8 py-3 rounded-full text-xl hover:opacity-90 transition-opacity">
+            <button className="bg-[#F63241] text-white px-8 py-2 rounded-full text-xl hover:opacity-90 transition-opacity">
               Get Access Now
             </button>
           </div>
@@ -169,10 +169,10 @@ const VipRecordsSection: React.FC = () => {
       </div>
 
       {/* Bottom Countdown Section */}
-      <div className="bg-[#111413] py-12">
+      <div className="bg-[#111413] py-8">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h3 className="text-xl text-white mb-8">Next Vip Starts</h3>
+            <h3 className="text-xl text-white mb-6">Next Vip Starts</h3>
             <div className="flex justify-center gap-8">
               <CountdownBox value={countdown.hours} label="Hours" />
               <CountdownBox value={countdown.minutes} label="Minutes" />
