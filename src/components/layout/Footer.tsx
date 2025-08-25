@@ -30,13 +30,13 @@ const PaymentIcon: React.FC<{
   width: number;
   height: number;
 }> = ({ src, alt, width, height }) => (
-  <div className="bg-white rounded flex items-center justify-center p-2">
+  <div className=" rounded flex items-center justify-center p-2">
     <Image
       src={src}
       alt={alt}
       width={width}
       height={height}
-      className="object-contain"
+      className="object-contain w-20"
     />
   </div>
 );
@@ -181,9 +181,15 @@ const Footer: React.FC = () => {
               {/* Contact Section */}
               <FooterSection title="Contact us">
                 <div className="text-base space-y-1">
-                  <p>WhatsApp : +1 (307) 218-5698</p>
-                  <p>Email : hello@matchplug.com</p>
-                  <p>Telegram : @matchplugvip</p>
+                  <p>
+                    WhatsApp : <b>+1 (307) 218-5698</b>
+                  </p>
+                  <p>
+                    Email : <b>hello@matchplug.com</b>
+                  </p>
+                  <p>
+                    Telegram : <b>@matchplugvip</b>
+                  </p>
                 </div>
               </FooterSection>
             </div>
@@ -192,7 +198,7 @@ const Footer: React.FC = () => {
 
         {/* Payment Methods */}
         <div className="flex justify-center mb-8">
-          <div className="flex flex-wrap gap-4 items-center justify-center">
+          <div className="flex flex-wrap gap-2 items-center justify-center">
             {paymentMethods.map((method, index) => (
               <PaymentIcon key={index} {...method} />
             ))}
