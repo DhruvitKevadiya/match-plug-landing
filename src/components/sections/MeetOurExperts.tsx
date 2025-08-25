@@ -165,10 +165,8 @@ const MeetOurExperts: React.FC = () => {
 
         {/* Subscription Button */}
         <div className="flex justify-center mt-8">
-          <button className="bg-gradient-to-r from-gray-200 to-gray-400 p-[2px] rounded-full">
-            <span className=" bg-[#F4F6FB] rounded-full px-8 pt-3 pb-3.5 sm:text-lg text-black hover:bg-gray-50 transition-colors">
-              Subscribe to Get Personalized Tips from Our Experts
-            </span>
+          <button className=" bg-[#F4F6FB] rounded-full border-2 border-black/50 px-8 pt-3 pb-3.5 sm:text-lg text-black hover:bg-gray-50 transition-colors">
+            Subscribe to Get Personalized Tips from Our Experts
           </button>
         </div>
       </div>

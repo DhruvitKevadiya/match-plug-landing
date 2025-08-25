@@ -75,7 +75,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Mobile Burger Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center justify-center">
             <button
               onClick={toggleMobileMenu}
               className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 transition-colors duration-200"
