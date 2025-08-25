@@ -123,10 +123,10 @@ const SureWinPredictionSection: React.FC = () => {
 
           {/* Prediction Card */}
           <div
-            className="bg-white/70 backdrop-blur-sm rounded-[51px] px-8 py-10 shadow-lg flex flex-col"
+            className="bg-white/70 backdrop-blur-sm rounded-[51px] px-8 py-10 shadow-lg flex flex-col gap-8 md:gap-0"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            <div className="flex w-full items-center justify-evenly">
+            <div className="flex w-full items-center justify-evenly flex-col md:flex-row md:gap-0 gap-6 ">
               {" "}
               <img
                 src={todaysMatch.homeTeam.logo}
