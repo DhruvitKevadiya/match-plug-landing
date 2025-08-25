@@ -95,7 +95,7 @@ const TestimonialsSection: React.FC = () => {
 
   return (
     <section className="bg-[#3B425D] py-20 ">
-      <div className=" mx-auto max-w-[100rem]">
+      <div className=" mx-auto max-w-[130rem]">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 px-4">
           <div>

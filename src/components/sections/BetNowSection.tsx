@@ -27,7 +27,7 @@ const BetCard: React.FC<{ card: BetCard }> = ({ card }) => (
   <div className="flex flex-col lg:flex-row gap-8 max-w-2xl">
     {/* Left Card */}
     <div
-      className=" rounded-3xl border border-white h-fit "
+      className=" rounded-[51px] border border-white h-fit "
       style={{ backgroundColor: card.backgroundColor }}
     >
       <div className="text-center flex items-center justify-center">
@@ -36,7 +36,7 @@ const BetCard: React.FC<{ card: BetCard }> = ({ card }) => (
           alt={card.bookmaker.name}
           width={164}
           height={93}
-          className="object-contain  w-56 h-72"
+          className="object-contain  w-60 h-80"
         />
       </div>
     </div>

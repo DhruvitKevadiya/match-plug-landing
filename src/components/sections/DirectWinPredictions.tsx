@@ -302,7 +302,7 @@ const DirectWinPredictions: React.FC = () => {
 
         {/* Cards Container */}
         <div className="relative">
-          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar">
             {displayData.map((card) => (
               <PredictionCard key={card.id} card={card} />
             ))}

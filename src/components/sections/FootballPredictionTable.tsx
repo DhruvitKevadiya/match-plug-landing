@@ -324,7 +324,7 @@ const FootballPredictionTable: React.FC = () => {
           <div className="flex gap-3 items-center justify-center flex-wrap">
             <button
               onClick={() => handleTabChange("today")}
-              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "today"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white bla hover:text-gray-800"
@@ -334,7 +334,7 @@ const FootballPredictionTable: React.FC = () => {
             </button>
             <button
               onClick={() => handleTabChange("yesterday")}
-              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "yesterday"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white bla hover:text-gray-800"
@@ -344,7 +344,7 @@ const FootballPredictionTable: React.FC = () => {
             </button>
             <button
               onClick={() => handleTabChange("lastWeek")}
-              className={`px-8 py-2 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "lastWeek"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white bla hover:text-gray-800"
