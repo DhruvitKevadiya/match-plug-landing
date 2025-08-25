@@ -119,7 +119,7 @@ const UserIcon = () => (
 );
 
 const PricingCard: React.FC<{ plan: PricingPlan }> = ({ plan }) => (
-  <div className="relative h-full">
+  <div className="h-full relative ">
     {plan.isBestValue && (
       <div className="absolute -top-9 left-1/2 transform -translate-x-1/2 z-10">
         <div className="bg-white border border-gray-200 shadow-lg rounded-full px-6 py-4">
@@ -129,7 +129,7 @@ const PricingCard: React.FC<{ plan: PricingPlan }> = ({ plan }) => (
     )}
 
     <div
-      className={`relative rounded-[51px] px-8 pb-8 pt-12  flex flex-col border border-gray-300`}
+      className={`relative rounded-[51px] px-8 pb-8 pt-12 h-full flex flex-col border border-gray-300`}
       style={{ backgroundColor: plan.backgroundColor }}
     >
       {/* Header */}
@@ -160,13 +160,13 @@ const PricingCard: React.FC<{ plan: PricingPlan }> = ({ plan }) => (
       </div>
 
       {/* Price */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <span className="text-4xl font-bold text-black">{plan.price}</span>
       </div>
 
       {/* CTA Button */}
       <div className="text-center">
-        <button className="bg-white rounded-full px-8 py-3 text-xl font-bold text-black hover:opacity-90 transition-opacity">
+        <button className="bg-white rounded-full px-6 py-2 text-lg font-bold text-black hover:opacity-90 transition-opacity">
           Get Started
         </button>
         <p className="text-base font-medium text-black mt-3">Cancel Anytime</p>
@@ -283,7 +283,7 @@ const PricingPlans: React.FC = () => {
         </div>
 
         {/* Controls */}
-        <div className="flex   w-full lg:flex-row justify-between items-center gap-6 mb-16 max-w-6xl mx-auto">
+        <div className="flex   w-full flex-col sm:flex-row justify-between items-center gap-4 mb-16 max-w-6xl mx-auto">
           {/* <div className="flex-1"></div> */}
 
           {/* Billing Period Toggle */}
@@ -324,7 +324,7 @@ const PricingPlans: React.FC = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3  max-w-6xl mx-auto mb-16 lg:gap-8 gap-16">
           {plans.map((plan) => (
             <PricingCard key={plan.id} plan={plan} />
           ))}

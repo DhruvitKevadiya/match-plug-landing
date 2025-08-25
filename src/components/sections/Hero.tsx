@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
             <Button variant="secondary">Get Free Tips</Button>
           </div>
         </div>{" "}
-        <div className="flex w-full items-center gap-4 sm:gap-3 pt-28 sm:pt-36 sm:flex-row flex-col ">
+        <div className="flex w-full items-center gap-4 sm:gap-3 pt-28 sm:pt-36 sm:flex-row flex-col max-w-[100rem] ">
           <span className="w-full h-0.5 bg-white/60"></span>
           <p className=" text-nowrap font-semibold  text-white">
             Today’s Jackpot Odds Expire in{" "}

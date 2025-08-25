@@ -21,7 +21,7 @@ const TestimonialCard: React.FC<{
   isActive: boolean;
 }> = ({ testimonial, isActive }) => (
   <div
-    className={`relative h-96 lg:w-3/5 xl:w-3/5 w-full bg-cover bg-center transition-all duration-500 `}
+    className={`relative h-[28rem] lg:w-3/5 xl:w-3/5 w-full bg-cover bg-center transition-all duration-500 `}
     // isActive ? "w-[744px]" : "w-[327px]"
     style={{ backgroundImage: `url(${testimonial.image})` }}
   >
@@ -41,7 +41,7 @@ const TestimonialImageCard: React.FC<{
   onClick: () => void;
 }> = ({ image, onClick }) => (
   <div
-    className="w-full h-56 lg:h-96 bg-cover bg-center cursor-pointer hover:opacity-80 transition-opacity"
+    className="w-full h-96 lg:h-[28rem] bg-cover bg-center cursor-pointer hover:opacity-80 transition-opacity"
     style={{ backgroundImage: `url(${image.image})` }}
     onClick={onClick}
   />
@@ -94,17 +94,17 @@ const TestimonialsSection: React.FC = () => {
     }));
 
   return (
-    <section className="bg-[#3B425D] py-20">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#3B425D] py-20 ">
+      <div className=" mx-auto max-w-[100rem]">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 px-4">
           <div>
             <h2 className="text-3xl font-bold text-white">
               Testimonials and Success Stories
             </h2>
           </div>
           <div>
-            <p className="text-2xl text-white">
+            <p className="text-xl text-white">
               Porem ipsum dolor sit amet, consectetur adipiscing elit. Porem
               ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
@@ -112,7 +112,7 @@ const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="flex flex-col lg:flex-row gap-1 overflow-hidden">
+        <div className="flex flex-col lg:flex-row  overflow-hidden">
           {/* Active Testimonial - Large */}
           <TestimonialCard
             testimonial={testimonials[activeTestimonial]}

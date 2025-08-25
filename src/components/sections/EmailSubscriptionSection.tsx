@@ -23,10 +23,10 @@ const EmailSubscriptionSection: React.FC = () => {
 
   return (
     <section
-      className="py-20 relative overflow-hidden"
+      className="py-20 -mt-3 relative overflow-hidden"
       style={{
         backgroundImage:
-          "linear-gradient(0deg, rgba(16, 16, 16, 0.63), rgba(16, 16, 16, 0.63)), url(/bg4.png)",
+          "linear-gradient(0deg, rgba(16, 16, 16, 0.0), rgba(16, 16, 16, 0.0)), url(/bg4.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -39,7 +39,7 @@ const EmailSubscriptionSection: React.FC = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-xl text-white mb-12 max-w-3xl mx-auto">
+          <p className="text-xl text-white mb-9 max-w-3xl mx-auto">
             Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
             turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
             nec fringilla.

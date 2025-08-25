@@ -7,10 +7,10 @@ interface StatItem {
 }
 
 const StatColumn: React.FC<{ stat: StatItem }> = ({ stat }) => (
-  <div className="flex-1 px-8">
+  <div className="flex-1 sm:px-8">
     <h3 className="text-5xl font-bold text-black mb-6">{stat.number}</h3>
-    <p className="text-2xl text-black mb-4">{stat.description}</p>
-    <p className="text-xl font-semibold text-black">{stat.highlight}</p>
+    <p className="text-xl text-black mb-4">{stat.description}</p>
+    <p className="text-lg font-semibold text-black">{stat.highlight}</p>
   </div>
 );
 
@@ -51,16 +51,13 @@ const JoinWinningBettorsSection: React.FC = () => {
 
             {/* Right Columns - Stats with Divider */}
             <div className="lg:col-span-2 flex flex-col md:flex-row">
-              {/* Vertical Divider Line */}
-              <div className="hidden lg:block w-px h-48 bg-black mr-12"></div>
-
               {/* Stats Columns */}
-              <div className="flex flex-col md:flex-row flex-1">
+              <div className="flex flex-col md:flex-row flex-1 gap-10 sm:gap-0">
                 {stats.map((stat, index) => (
                   <React.Fragment key={index}>
                     <StatColumn stat={stat} />
-                    {index < stats.length - 1 && (
-                      <div className="hidden md:block w-px h-48 bg-black mx-4"></div>
+                    {index === 0 && (
+                      <div className="hidden md:block w-px h-full bg-black mx-4"></div>
                     )}
                   </React.Fragment>
                 ))}

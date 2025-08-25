@@ -133,7 +133,7 @@ const BetNowSection: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+      <div className="container gap-10 mx-auto px-4 flex flex-col items-center justify-center">
         {/* Header */}
 
         <div className="text-center flex flex-col items-center justify-center mb-16">

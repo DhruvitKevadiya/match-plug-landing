@@ -61,7 +61,7 @@ const CategoryTab: React.FC<{
 }> = ({ category, isActive, onClick }) => (
   <button
     onClick={onClick}
-    className={`px-6 py-3 text-xl rounded-full border transition-all ${
+    className={`px-6 py-2.5 text-lg rounded-full border transition-all ${
       isActive
         ? "border-white bg-white text-black"
         : "border-white text-white hover:bg-white/10"
@@ -186,14 +186,14 @@ const FAQSection: React.FC = () => {
     <section
       className="py-20 relative overflow-hidden transition-all"
       style={{
-        backgroundImage: "url(/black-marble-patterned-texture-background.jpg)",
+        backgroundImage: "url(/bg5.png)",
         backgroundColor: "#455DBD",
         backgroundBlendMode: "screen",
       }}
     >
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-6">
             Frequently Asked Questions
           </h2>

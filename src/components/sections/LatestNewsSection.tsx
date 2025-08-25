@@ -37,9 +37,9 @@ const AuthorInfo: React.FC<{ author: string; authorImage: string }> = ({
 );
 
 const FeaturedNewsCard: React.FC<{ article: NewsArticle }> = ({ article }) => (
-  <div className="w-full max-w-[393px]">
+  <div className="w-full max-w-96">
     {/* Image */}
-    <div className="relative h-[248px] rounded-[51px] overflow-hidden border border-gray-300 mb-6">
+    <div className="relative h-[248px] rounded-[40px] overflow-hidden border border-gray-300 mb-3">
       <Image
         src={article.image || "/default-news.jpg"}
         alt={article.title}
@@ -49,9 +49,9 @@ const FeaturedNewsCard: React.FC<{ article: NewsArticle }> = ({ article }) => (
     </div>
 
     {/* Content */}
-    <div className="space-y-4">
-      <p className="text-base text-black">{article.date}</p>
-      <h3 className="text-3xl font-bold text-black leading-tight">
+    <div className="">
+      <p className="text-base text-black mb-1">{article.date}</p>
+      <h3 className="text-xl md:text-3xl font-bold text-black leading-tight mb-3">
         {article.title}
       </h3>
       <AuthorInfo author={article.author} authorImage={article.authorImage} />
@@ -60,10 +60,10 @@ const FeaturedNewsCard: React.FC<{ article: NewsArticle }> = ({ article }) => (
 );
 
 const NewsListItem: React.FC<{ article: NewsArticle }> = ({ article }) => (
-  <div className="py-6 first:pt-0">
-    <div className="space-y-3">
-      <p className="text-base text-black">{article.date}</p>
-      <h4 className="text-2xl font-bold text-black">{article.title}</h4>
+  <div className="pb-6 first:pt-0">
+    <div className="">
+      <p className="text-base text-black mb-1">{article.date}</p>
+      <h4 className="text-2xl font-bold text-black mb-4">{article.title}</h4>
       <AuthorInfo author={article.author} authorImage={article.authorImage} />
     </div>
     <div className="w-full h-px bg-black mt-6"></div>
@@ -77,7 +77,7 @@ const CategoryTab: React.FC<{
 }> = ({ category, isActive, onClick }) => (
   <button
     onClick={onClick}
-    className={`px-6 py-3 text-xl rounded-full transition-all ${
+    className={`px-5 py-2 text-lg rounded-full transition-all ${
       isActive
         ? "bg-[#455DBD] text-white font-semibold"
         : "bg-white text-black border border-gray-300 hover:bg-gray-50"
@@ -150,45 +150,47 @@ const LatestNewsSection: React.FC = () => {
       className="py-20"
       style={{ backgroundColor: "rgba(243, 244, 233, 0.59)" }}
     >
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-black mb-8">
-            Latest News and Previews
-          </h2>
+      <div className="max-w-[100rem] mx-auto flex items-center justify-center">
+        <div className="  flex items-center justify-center md:justify-start md:items-start flex-col mx-auto px-4">
+          {/* Header */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-black mb-8">
+              Latest News and Previews
+            </h2>
 
-          {/* Category Tabs */}
-          <div className="flex flex-wrap gap-4">
-            {categories.map((category) => (
-              <CategoryTab
-                key={category.id}
-                category={category}
-                isActive={activeCategory === category.id}
-                onClick={() => setActiveCategory(category.id)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* News Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Featured Articles */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredArticles.map((article) => (
-                <FeaturedNewsCard key={article.id} article={article} />
+            {/* Category Tabs */}
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              {categories.map((category) => (
+                <CategoryTab
+                  key={category.id}
+                  category={category}
+                  isActive={activeCategory === category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                />
               ))}
             </div>
           </div>
 
-          {/* News List */}
-          <div className="lg:col-span-4">
-            <div className="bg-white/50 rounded-lg p-6">
-              {listArticles.map((article, index) => (
-                <div key={article.id}>
-                  <NewsListItem article={article} />
-                </div>
-              ))}
+          {/* News Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Featured Articles */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {featuredArticles.map((article) => (
+                  <FeaturedNewsCard key={article.id} article={article} />
+                ))}
+              </div>
+            </div>
+
+            {/* News List */}
+            <div className="lg:col-span-4">
+              <div className=" rounded-lg p-6">
+                {listArticles.map((article, index) => (
+                  <div key={article.id}>
+                    <NewsListItem article={article} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

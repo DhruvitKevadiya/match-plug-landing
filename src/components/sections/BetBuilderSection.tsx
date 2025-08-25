@@ -190,7 +190,7 @@ const BetBuilderSection: React.FC = () => {
 
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="w-fit mx-auto px-4">
         {/* Header */}
         <h2 className="text-3xl font-bold text-black mb-6">Bet Builder</h2>
 
@@ -207,16 +207,16 @@ const BetBuilderSection: React.FC = () => {
         </div>
 
         {/* Bet Cards */}
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-28 md:justify-start justify-center">
+        <div className="flex flex-col lg:flex-row gap-16 xl:gap-28 md:justify-start justify-center">
           {/* First Card with Options */}
-          <div className="flex gap-8 lg:justify-start justify-center">
+          <div className="flex gap-10 lg:justify-start justify-center">
             <BetBuilderCard card={betCards[0]} />
 
             {/* Vertical Divider Line */}
           </div>
 
           {/* Second Card with Options */}
-          <div className="flex gap-8 lg:justify-start justify-center">
+          <div className="flex gap-10 lg:justify-start justify-center">
             <BetBuilderCard card={betCards[1]} />
           </div>
         </div>
