@@ -331,7 +331,7 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
               <td
                 className={`text-center py-3  sm:px-6 bg-[#EDF0F9] ${lastTdClass}`}
               >
-                <span className="inline-block bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                <span className="inline-block text-nowrap bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                   {(match as YesterdayMatch).result}
                 </span>
               </td>
@@ -352,7 +352,7 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
               <td
                 className={`text-center py-3  sm:px-6 bg-[#F4F6FB] ${lastTdClass}`}
               >
-                <span className="inline-block bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                <span className="inline-block text-nowrap bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                   {match.prediction}
                 </span>
               </td>
