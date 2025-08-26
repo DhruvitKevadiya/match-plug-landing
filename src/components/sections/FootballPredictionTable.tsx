@@ -268,50 +268,34 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
     if (activeTab === "yesterday") {
       return (
         <tr>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Home Team
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-3 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Home Team
           </th>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Away Team
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-3 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Away Team
           </th>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Prediction
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-3 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Prediction
           </th>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-1 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Result
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-1.5 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Result
           </th>
         </tr>
       );
     } else {
       return (
         <tr>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              League
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-3 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            League
           </th>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Home Team
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-3 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Home Team
           </th>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Away Team
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-3 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Away Team
           </th>
-          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
-            <span className="py-3 sm:py-4 px-1 sm:px-6 border w-full flex flex-1 rounded-t-full">
-              Prediction
-            </span>
+          <th className="text-left py-3 border border-white/50 sm:py-4 px-1.5 sm:px-6 text-white text-xs sm:text-sm font-bold  bg-[#455DBF] h-full  w-full">
+            Prediction
           </th>
         </tr>
       );
@@ -398,15 +382,15 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
         <div className="flex justify-center mb-6 sm:mb-10">
           <div className="flex gap-2 sm:gap-3 items-center justify-center flex-wrap">
             <button
-              onClick={() => handleTabChange("today")}
+              onClick={() => handleTabChange("yesterday")}
               className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
-                activeTab === "today"
+                activeTab === "yesterday"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white hover:text-gray-800"
               }`}
             >
-              Today
-            </button>
+              Yesterday
+            </button>{" "}
             <button
               onClick={() => handleTabChange("tomorrow")}
               className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
@@ -418,14 +402,14 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
               Tomorrow
             </button>
             <button
-              onClick={() => handleTabChange("yesterday")}
+              onClick={() => handleTabChange("today")}
               className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
-                activeTab === "yesterday"
+                activeTab === "today"
                   ? "bg-[#455DBD] text-white"
                   : "text-gray-600 bg-white hover:text-gray-800"
               }`}
             >
-              Yesterday
+              Today
             </button>
           </div>
         </div>
