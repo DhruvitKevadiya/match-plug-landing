@@ -392,16 +392,6 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
               Yesterday
             </button>{" "}
             <button
-              onClick={() => handleTabChange("tomorrow")}
-              className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
-                activeTab === "tomorrow"
-                  ? "bg-[#455DBD] text-white"
-                  : "text-gray-600 bg-white hover:text-gray-800"
-              }`}
-            >
-              Tomorrow
-            </button>
-            <button
               onClick={() => handleTabChange("today")}
               className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "today"
@@ -410,6 +400,16 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
               }`}
             >
               Today
+            </button>
+            <button
+              onClick={() => handleTabChange("tomorrow")}
+              className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
+                activeTab === "tomorrow"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white hover:text-gray-800"
+              }`}
+            >
+              Tomorrow
             </button>
           </div>
         </div>
