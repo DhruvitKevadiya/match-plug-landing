@@ -40,12 +40,12 @@ const Button: React.FC<ButtonProps> = ({
   // Style variants
   const variantClasses = {
     primary: `
-      bg-white hover:bg-gray-100 text-black hover:shadow-2xl
+      bg-green-400 hover:bg-green-500 text-black hover:shadow-2xl
       focus:ring-gray-500
     `,
     secondary: `
-      border-2 border-white/60 hover:border-white text-white 
-      hover:text-white hover:bg-white/10 backdrop-blur-sm
+      border-2 bg-blue-500 border-blue-400/60 hover:border-white text-white 
+      hover:text-white hover:bg-blue-500 backdrop-blur-sm
       focus:ring-white/50
     `,
   };

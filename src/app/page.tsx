@@ -22,9 +22,9 @@ export default function Home() {
     <div className="flex flex-col">
       <Header />
       <Hero />
-      <FootballPredictionTable />
+      <FootballPredictionTable title="FOOTBALL PREDICTION FOR TODAY" />
       <AmericanSportsSection />
-      <FootballPredictionTable />
+      <FootballPredictionTable title="AMERICAN SPORTS PREDICTION FOR TODAY" />
       <DirectWinPredictions />
       <BetBuilderSection />
       <MeetOurExperts />

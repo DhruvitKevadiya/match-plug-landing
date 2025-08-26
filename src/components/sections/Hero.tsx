@@ -45,11 +45,11 @@ const Hero: React.FC = () => {
   return (
     <section className="relative  bg-black overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 border border-red-600">
         <img
           src="/hero.png"
           alt=""
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="  object-cover w-full h-full  object-top"
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
             <Button variant="secondary">Get Free Tips</Button>
           </div>
         </div>{" "}
-        <div className="flex w-full items-center gap-4 sm:gap-3 pt-28 sm:pt-36 sm:flex-row flex-col max-w-[100rem] ">
+        <div className="flex w-full items-center gap-4 sm:gap-3 pt-20    sm:pt-36 sm:flex-row flex-col max-w-[100rem] ">
           <span className="w-full h-0.5 bg-white/60"></span>
           <p className=" text-nowrap font-bold  text-lg text-white">
             Today’s Jackpot Odds Expire in{" "}

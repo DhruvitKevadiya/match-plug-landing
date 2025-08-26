@@ -13,15 +13,23 @@ interface Match {
   prediction: string;
 }
 
-interface PredictionData {
-  today: Match[];
-  yesterday: Match[];
-  lastWeek: Match[];
+interface YesterdayMatch {
+  league?: string;
+  homeTeam: Team;
+  awayTeam: Team;
+  prediction: string;
+  result: string;
 }
 
-const FootballPredictionTable: React.FC = () => {
+interface PredictionData {
+  today: Match[];
+  tomorrow: Match[];
+  yesterday: YesterdayMatch[];
+}
+
+const FootballPredictionTable = ({ title }: { title: string }) => {
   const [activeTab, setActiveTab] = useState<
-    "today" | "yesterday" | "lastWeek"
+    "today" | "tomorrow" | "yesterday"
   >("today");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -101,9 +109,70 @@ const FootballPredictionTable: React.FC = () => {
         prediction: "1x",
       },
     ],
-    yesterday: [
+    tomorrow: [
       {
         league: "English Premier League",
+        homeTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Arsenal-Logo.png",
+          name: "Arsenal",
+        },
+        awayTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Liverpool-Logo.png",
+          name: "Liverpool",
+        },
+        prediction: "2",
+      },
+      {
+        league: "La Liga",
+        homeTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Atletico-Madrid-Logo.png",
+          name: "Atletico Madrid",
+        },
+        awayTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Valencia-Logo.png",
+          name: "Valencia",
+        },
+        prediction: "1",
+      },
+      {
+        league: "Bundesliga",
+        homeTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/RB-Leipzig-Logo.png",
+          name: "RB Leipzig",
+        },
+        awayTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Bayer-Leverkusen-Logo.png",
+          name: "Bayer Leverkusen",
+        },
+        prediction: "1x",
+      },
+      {
+        league: "Serie A",
+        homeTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Inter-Milan-Logo.png",
+          name: "Inter Milan",
+        },
+        awayTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Napoli-Logo.png",
+          name: "Napoli",
+        },
+        prediction: "2",
+      },
+      {
+        league: "Ligue 1",
+        homeTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Lyon-Logo.png",
+          name: "Lyon",
+        },
+        awayTeam: {
+          logo: "https://logos-world.net/wp-content/uploads/2020/06/Monaco-Logo.png",
+          name: "Monaco",
+        },
+        prediction: "1",
+      },
+    ],
+    yesterday: [
+      {
         homeTeam: {
           logo: "https://logos-world.net/wp-content/uploads/2020/06/Chelsea-Logo.png",
           name: "Chelsea",
@@ -113,9 +182,9 @@ const FootballPredictionTable: React.FC = () => {
           name: "Manchester United",
         },
         prediction: "2",
+        result: "2-1",
       },
       {
-        league: "La Liga",
         homeTeam: {
           logo: "https://logos-world.net/wp-content/uploads/2020/06/Real-Madrid-Logo.png",
           name: "Real Madrid",
@@ -125,9 +194,9 @@ const FootballPredictionTable: React.FC = () => {
           name: "Barcelona",
         },
         prediction: "1",
+        result: "3-2",
       },
       {
-        league: "Bundesliga",
         homeTeam: {
           logo: "https://logos-world.net/wp-content/uploads/2020/06/Bayern-Munich-Logo.png",
           name: "Bayern Munich",
@@ -137,9 +206,9 @@ const FootballPredictionTable: React.FC = () => {
           name: "Borussia Dortmund",
         },
         prediction: "1x",
+        result: "1-1",
       },
       {
-        league: "Serie A",
         homeTeam: {
           logo: "https://logos-world.net/wp-content/uploads/2020/06/Juventus-Logo.png",
           name: "Juventus",
@@ -149,9 +218,9 @@ const FootballPredictionTable: React.FC = () => {
           name: "AC Milan",
         },
         prediction: "2",
+        result: "0-2",
       },
       {
-        league: "Ligue 1",
         homeTeam: {
           logo: "https://logos-world.net/wp-content/uploads/2020/06/Paris-Saint-Germain-PSG-Logo.png",
           name: "Paris Saint-Germain",
@@ -161,68 +230,7 @@ const FootballPredictionTable: React.FC = () => {
           name: "Olympique Marseille",
         },
         prediction: "1",
-      },
-    ],
-    lastWeek: [
-      {
-        league: "English Championship",
-        homeTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Leeds-United-Logo.png",
-          name: "Leeds United",
-        },
-        awayTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Burnley-Logo.png",
-          name: "Burnley",
-        },
-        prediction: "1",
-      },
-      {
-        league: "MLS",
-        homeTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/LA-Galaxy-Logo.png",
-          name: "LA Galaxy",
-        },
-        awayTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Seattle-Sounders-Logo.png",
-          name: "Seattle Sounders",
-        },
-        prediction: "2",
-      },
-      {
-        league: "Eredivisie",
-        homeTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Ajax-Logo.png",
-          name: "Ajax",
-        },
-        awayTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/PSV-Eindhoven-Logo.png",
-          name: "PSV Eindhoven",
-        },
-        prediction: "1x",
-      },
-      {
-        league: "Super Lig",
-        homeTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Besiktas-Logo.png",
-          name: "Besiktas",
-        },
-        awayTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Fenerbahce-Logo.png",
-          name: "Fenerbahçe",
-        },
-        prediction: "1",
-      },
-      {
-        league: "Primeira Liga",
-        homeTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/FC-Porto-Logo.png",
-          name: "Porto",
-        },
-        awayTeam: {
-          logo: "https://logos-world.net/wp-content/uploads/2020/06/Benfica-Logo.png",
-          name: "Benfica",
-        },
-        prediction: "1x",
+        result: "4-0",
       },
     ],
   };
@@ -230,186 +238,204 @@ const FootballPredictionTable: React.FC = () => {
   const getCurrentData = () => predictionData[activeTab];
   const displayData = getCurrentData().slice(currentIndex, currentIndex + 6);
 
-  const handlePrevious = () => {
-    const totalData = getCurrentData().length;
-    setCurrentIndex((prev) =>
-      prev === 0 ? Math.max(0, totalData - 6) : Math.max(0, prev - 1)
-    );
-  };
-
-  const handleNext = () => {
-    const totalData = getCurrentData().length;
-    setCurrentIndex((prev) => (prev + 6 >= totalData ? 0 : prev + 1));
-  };
-
-  const handleTabChange = (tab: "today" | "yesterday" | "lastWeek") => {
+  const handleTabChange = (tab: "today" | "tomorrow" | "yesterday") => {
     setActiveTab(tab);
     setCurrentIndex(0);
   };
 
   const TeamCell: React.FC<{ team: Team }> = ({ team }) => (
-    <div className="flex items-center gap-3 py-3">
-      <div className="w-8 h-8 relative flex-shrink-0">
+    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 py-3">
+      <div className="w-6 h-6 sm:w-8 sm:h-8 relative flex-shrink-0">
         <img
           src={team.logo}
           alt={`${team.name} logo`}
           width={32}
           height={32}
-          className="w-8 h-8 object-contain rounded"
+          className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded"
           onError={(e) => {
             e.currentTarget.src =
               "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNiA4QzEyIDggOSAxMSA5IDE1QzkgMTkgMTIgMjIgMTYgMjJDMjAgMjIgMjMgMTkgMjMgMTVDMjMgMTEgMjAgOCAxNiA4WiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K";
           }}
         />
       </div>
-      <span className="text-gray-800 font-medium text-sm">{team.name}</span>
+      <span className="text-gray-800 font-medium text-xs sm:text-sm text-center sm:text-left">
+        {team.name}
+      </span>
     </div>
   );
 
-  return (
-    <section className="bg-[#F4F6FB] py-24">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Header with Navigation Arrows */}
-        <div className="flex items-center justify-center mb-8 sm:gap-20 gap-5">
-          <button
-            onClick={handlePrevious}
-            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
-          >
-            <svg
-              width="27"
-              height="16"
-              viewBox="0 0 27 16"
-              className="w-5 h-5 rotate-180"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M26.7071 8.70711C27.0976 8.31658 27.0976 7.68342 26.7071 7.29289L20.3431 0.928932C19.9526 0.538408 19.3195 0.538408 18.9289 0.928932C18.5384 1.31946 18.5384 1.95262 18.9289 2.34315L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.70711ZM0 8V9H26V8V7H0V8Z"
-                fill="white"
-              />
-            </svg>
-          </button>
+  const renderTableHeaders = () => {
+    if (activeTab === "yesterday") {
+      return (
+        <tr>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Home Team
+            </span>
+          </th>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Away Team
+            </span>
+          </th>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Prediction
+            </span>
+          </th>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-1 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Result
+            </span>
+          </th>
+        </tr>
+      );
+    } else {
+      return (
+        <tr>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              League
+            </span>
+          </th>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Home Team
+            </span>
+          </th>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-3 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Away Team
+            </span>
+          </th>
+          <th className="text-left text-black text-xs sm:text-sm font-bold rounded-t-full bg-white h-full  w-full">
+            <span className="py-3 sm:py-4 px-1 sm:px-6 border w-full flex flex-1 rounded-t-full">
+              Prediction
+            </span>
+          </th>
+        </tr>
+      );
+    }
+  };
 
+  const renderTableRows = () => {
+    return displayData.map((match, index) => {
+      const isLastRow = index === displayData.length - 1;
+      const firstTdClass = isLastRow ? "rounded-bl-full" : "";
+      const lastTdClass = isLastRow ? "rounded-br-full" : "";
+
+      return (
+        <tr
+          key={index}
+          className={`border-b border-x border-gray-500 hover:bg-gray-50 transition-colors duration-150`}
+        >
+          {activeTab === "yesterday" ? (
+            <>
+              <td
+                className={`px-3 sm:px-6 bg-[#F4F6FB] text-xs sm:text-sm ${firstTdClass}`}
+              >
+                <TeamCell team={match.homeTeam} />
+              </td>
+              <td className="px-3 sm:px-6 bg-[#EDF0F9] text-xs sm:text-sm">
+                <TeamCell team={match.awayTeam} />
+              </td>
+              <td className="text-center py-3 px-3 sm:px-6 bg-[#F4F6FB]">
+                <span className="inline-block bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                  {match.prediction}
+                </span>
+              </td>
+              <td
+                className={`text-center py-3  sm:px-6 bg-[#EDF0F9] ${lastTdClass}`}
+              >
+                <span className="inline-block bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                  {(match as YesterdayMatch).result}
+                </span>
+              </td>
+            </>
+          ) : (
+            <>
+              <td
+                className={`py-3 px-3 sm:px-6 text-xs sm:text-sm text-black font-medium bg-[#EDF0F9] ${firstTdClass}`}
+              >
+                {(match as Match).league}
+              </td>
+              <td className="px-3 sm:px-6 bg-[#F4F6FB] text-xs sm:text-sm">
+                <TeamCell team={match.homeTeam} />
+              </td>
+              <td className="px-3 sm:px-6 bg-[#EDF0F9] text-xs sm:text-sm">
+                <TeamCell team={match.awayTeam} />
+              </td>
+              <td
+                className={`text-center py-3  sm:px-6 bg-[#F4F6FB] ${lastTdClass}`}
+              >
+                <span className="inline-block bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                  {match.prediction}
+                </span>
+              </td>
+            </>
+          )}
+        </tr>
+      );
+    });
+  };
+
+  return (
+    <section className="bg-[#F4F6FB] py-12 sm:py-24">
+      <div className="max-w-6xl mx-auto sm:px-4 px-2">
+        {/* Header with Navigation Arrows */}
+        <div className="flex items-center justify-center mb-6 sm:mb-8 gap-5 sm:gap-20">
           <div className="text-center">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
-              FOOTBALL PREDICTION FOR TODAY
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-1">
+              {title}
             </h2>
-            <p className="text-black  md:text-lg max-w-xl">
+            <p className="text-black text-sm sm:text-base md:text-lg max-w-xl">
               Sure Tips and Football Super Tips From The Experts
             </p>
           </div>
-
-          <button
-            onClick={handleNext}
-            className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 text-white flex items-center justify-center transition-colors duration-200 "
-          >
-            <svg
-              width="27"
-              height="16"
-              viewBox="0 0 27 16"
-              className="w-5 h-5 "
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M26.7071 8.70711C27.0976 8.31658 27.0976 7.68342 26.7071 7.29289L20.3431 0.928932C19.9526 0.538408 19.3195 0.538408 18.9289 0.928932C18.5384 1.31946 18.5384 1.95262 18.9289 2.34315L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.70711ZM0 8V9H26V8V7H0V8Z"
-                fill="white"
-              />
-            </svg>
-          </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-10">
-          <div className="flex gap-3 items-center justify-center flex-wrap">
+        <div className="flex justify-center mb-6 sm:mb-10">
+          <div className="flex gap-2 sm:gap-3 items-center justify-center flex-wrap">
             <button
               onClick={() => handleTabChange("today")}
-              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "today"
                   ? "bg-[#455DBD] text-white"
-                  : "text-gray-600 bg-white bla hover:text-gray-800"
+                  : "text-gray-600 bg-white hover:text-gray-800"
               }`}
             >
               Today
             </button>
             <button
+              onClick={() => handleTabChange("tomorrow")}
+              className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
+                activeTab === "tomorrow"
+                  ? "bg-[#455DBD] text-white"
+                  : "text-gray-600 bg-white hover:text-gray-800"
+              }`}
+            >
+              Tomorrow
+            </button>
+            <button
               onClick={() => handleTabChange("yesterday")}
-              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
+              className={`px-4 sm:px-8 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 border border-black/10 ${
                 activeTab === "yesterday"
                   ? "bg-[#455DBD] text-white"
-                  : "text-gray-600 bg-white bla hover:text-gray-800"
+                  : "text-gray-600 bg-white hover:text-gray-800"
               }`}
             >
               Yesterday
-            </button>
-            <button
-              onClick={() => handleTabChange("lastWeek")}
-              className={`px-8 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 border border-black/10 ${
-                activeTab === "lastWeek"
-                  ? "bg-[#455DBD] text-white"
-                  : "text-gray-600 bg-white bla hover:text-gray-800"
-              }`}
-            >
-              Last Week
             </button>
           </div>
         </div>
 
         {/* Table */}
-        <div className=" overflow-hidden ">
-          <div className="overflow-x-auto">
-            <table className="w-full  overflow-hidden ">
-              <thead>
-                <tr>
-                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
-                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
-                      League
-                    </span>
-                  </th>
-                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
-                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
-                      Home Team
-                    </span>
-                  </th>
-                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
-                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
-                      Away Team
-                    </span>
-                  </th>
-                  <th className="text-left  text-black text-sm sm:text-base font-bold   rounded-t-full bg-white ">
-                    <span className="py-4 px-6 border w-full flex flex-1 rounded-t-full">
-                      Prediction
-                    </span>
-                  </th>{" "}
-                </tr>
-              </thead>
-              <tbody className=" ">
-                {displayData.map((match, index) => (
-                  <tr
-                    key={index}
-                    className={`border-b border-x border-gray-500 hover:bg-gray-50 transition-colors duration-150  ${
-                      index === displayData.length - 1
-                        ? "border- rounded-full  "
-                        : ""
-                    }`}
-                  >
-                    <td className="py-3 px-6 text-sm sm:text-base text-black font-medium bg-[#EDF0F9]">
-                      {match.league}
-                    </td>
-                    <td className="px-6 bg-[#F4F6FB] text-sm sm:text-base">
-                      <TeamCell team={match.homeTeam} />
-                    </td>
-                    <td className="px-6 bg-[#EDF0F9] text-sm sm:text-base">
-                      <TeamCell team={match.awayTeam} />
-                    </td>
-                    <td className="text-center py-3 px-6 bg-[#F4F6FB]">
-                      <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm  sm:text-base font-semibold">
-                        {match.prediction}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+        <div className="overflow-hidden">
+          <div className="w-full">
+            <table className="w-full overflow-hidden">
+              <thead>{renderTableHeaders()}</thead>
+              <tbody>{renderTableRows()}</tbody>
             </table>
           </div>
         </div>

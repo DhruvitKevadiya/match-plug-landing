@@ -70,6 +70,30 @@ const DirectWinPredictions: React.FC = () => {
         backgroundImage:
           "https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       },
+      {
+        id: "111",
+        title: "Over 2.5 Goals",
+        subtitle: "5-6 Wins from the last 7 games",
+        accuracy: "78% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      },
+      {
+        id: "222",
+        title: "BTTS / GG",
+        subtitle: "5-6 Wins from the last 7 games",
+        accuracy: "78% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      },
+      {
+        id: "333",
+        title: "Mix Chance",
+        subtitle: "5-6 Wins from the last 7 games",
+        accuracy: "78% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      },
     ],
     riskyTipsMarkets: [
       {
@@ -202,7 +226,7 @@ const DirectWinPredictions: React.FC = () => {
   };
 
   const PredictionCard: React.FC<{ card: PredictionCard }> = ({ card }) => (
-    <div className="relative w-64 h-fit rounded-4xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-all duration-300">
+    <div className="relative  w-full h-fit rounded-4xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-all duration-300">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -302,14 +326,14 @@ const DirectWinPredictions: React.FC = () => {
 
         {/* Cards Container */}
         <div className="relative">
-          <div className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar">
+          <div className="gap-6 flex-col items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center pb-4 ">
             {displayData.map((card) => (
               <PredictionCard key={card.id} card={card} />
             ))}
           </div>
 
           {/* Fade out effect on right */}
-          <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-gray-100 to-transparent pointer-events-none" />
+          {/* <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-gray-100 to-transparent pointer-events-none" /> */}
         </div>
       </div>
     </section>

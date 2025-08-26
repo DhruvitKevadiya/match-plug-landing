@@ -6,12 +6,13 @@ const AmericanSportsSection: React.FC = () => {
 
   return (
     <section
-      className="py-20 relative overflow-hidden"
+      className="sm:py-20 py-28 relative overflow-hidden"
       style={{
         backgroundImage:
-          "linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/sport.png)",
+          "linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/sport-mobile.png)",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "left",
+        // objectPosition: "right",
       }}
     >
       <div className="container mx-auto px-4">

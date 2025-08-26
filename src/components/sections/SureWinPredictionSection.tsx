@@ -128,13 +128,25 @@ const SureWinPredictionSection: React.FC = () => {
           >
             <div className="flex w-full items-center justify-evenly flex-col md:flex-row md:gap-0 gap-6 ">
               {" "}
-              <img
-                src={todaysMatch.homeTeam.logo}
-                alt={todaysMatch.homeTeam.name}
-                width={120}
-                height={120}
-                className="object-cover w-32 h-32"
-              />
+              <div className="flex gap-2 relative">
+                <img
+                  src={todaysMatch.homeTeam.logo}
+                  alt={todaysMatch.homeTeam.name}
+                  width={120}
+                  height={120}
+                  className="object-cover w-32 h-32"
+                />
+                <img
+                  src={todaysMatch.awayTeam.logo}
+                  alt={todaysMatch.awayTeam.name}
+                  width={120}
+                  height={120}
+                  className="object-cover w-32 h-32 block md:hidden"
+                />
+                <div className="w-10 h-10 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 border-2 border-black bg-white flex items-center justify-center  md:hidden">
+                  <span className="text-lg font-bold text-black">VS</span>
+                </div>
+              </div>
               <div className="flex flex-col">
                 {" "}
                 <div className="flex flex-col">
@@ -197,11 +209,11 @@ const SureWinPredictionSection: React.FC = () => {
                 </div>{" "}
               </div>{" "}
               <img
-                src={todaysMatch.homeTeam.logo}
-                alt={todaysMatch.homeTeam.name}
+                src={todaysMatch.awayTeam.logo}
+                alt={todaysMatch.awayTeam.name}
                 width={120}
                 height={120}
-                className="object-cover w-32 h-32"
+                className="object-cover w-32 h-32 md:block hidden"
               />
             </div>
             {/* Prediction Details */}
