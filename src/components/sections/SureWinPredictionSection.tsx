@@ -121,6 +121,36 @@ const SureWinPredictionSection: React.FC = () => {
             <div className="w-96 h-px bg-white/70 mx-auto"></div>
           </div>
 
+          {/* Records Section */}
+          <div className="text-center mt-5 mb-5 w-full  ">
+            <div className="sm:inline-flex items-center gap-3 sm:gap-4 flex sm:flex-row flex-col rounded-full sm:px-6 py-3">
+              <span className="text-lg text-white">Records</span>
+              <div className="flex items-center gap-2 w-full sm:w-fit">
+                <input
+                  type="date"
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                  className="bg-white border w-full sm:w-fit rounded-full border-gray-300 px-6 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                {/* <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <svg
+                  className="w-5 h-5 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </button> */}
+              </div>
+            </div>
+          </div>
+
           {/* Prediction Card */}
           <div
             className="bg-white/70 backdrop-blur-sm rounded-[51px] px-8 py-10 shadow-lg flex flex-col gap-8 md:gap-0"
@@ -229,36 +259,6 @@ const SureWinPredictionSection: React.FC = () => {
                 <PredictionRow label={Prediction.confidence} />
               </div>
               <PredictionRow label={Prediction.additional || ""} />
-            </div>
-          </div>
-        </div>
-
-        {/* Records Section */}
-        <div className="text-center mt-8 w-full ">
-          <div className="inline-flex items-center gap-4  rounded-full px-6 py-3">
-            <span className="text-lg text-white">Records</span>
-            <div className="flex items-center gap-2">
-              <input
-                type="date"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-                className="bg-white border rounded-full border-gray-300 px-6 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              {/* <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <svg
-                  className="w-5 h-5 text-black"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </button> */}
             </div>
           </div>
         </div>

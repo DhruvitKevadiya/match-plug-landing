@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative  bg-black overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 border border-red-600">
+      <div className="absolute inset-0 ">
         <img
           src="/hero.png"
           alt=""
