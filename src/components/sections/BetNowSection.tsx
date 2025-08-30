@@ -125,6 +125,7 @@ const BetNowSection: React.FC = () => {
 
   return (
     <section
+      id="jackpot-bet-codes"
       className="py-20 relative overflow-hidden"
       style={{
         backgroundImage:

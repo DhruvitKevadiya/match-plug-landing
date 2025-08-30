@@ -58,20 +58,20 @@ const GlobeIcon = () => (
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="16" cy="16" r="15" stroke="#33363F" stroke-width="2" />
+      <circle cx="16" cy="16" r="15" stroke="#33363F" strokeWidth="2" />
       <ellipse
         cx="16"
         cy="16"
         rx="5.625"
         ry="15"
         stroke="#33363F"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M1 16H31"
         stroke="#33363F"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   </FeatureIcon>

@@ -14,3 +14,7 @@
 .hide-scrollbar {
   -ms-overflow-style: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}
