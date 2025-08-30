@@ -40,25 +40,25 @@ const Header: React.FC = () => {
               Home
             </Link>
             <Link
-              href="/predictions"
+              href="#prediction"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
             >
               Predictions
             </Link>
             <Link
-              href="/betting-tips"
+              href="#tips"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
             >
               Betting tips
             </Link>
             <Link
-              href="/match-previews"
+              href="#"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
             >
               Match Previews
             </Link>
             <Link
-              href="/news"
+              href="#"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
             >
               News
@@ -67,8 +67,8 @@ const Header: React.FC = () => {
 
           {/* Desktop Login Button */}
           <div className="hidden md:flex items-center">
-            <Link href="/login">
-              <button className="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105">
+            <Link href="https://user.matchplug.com/auth/login">
+              <button className="bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 cursor-pointer">
                 Login
               </button>
             </Link>
@@ -119,28 +119,28 @@ const Header: React.FC = () => {
               Home
             </Link>
             <Link
-              href="/predictions"
+              href="#prediction"
               onClick={closeMobileMenu}
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
             >
               Predictions
             </Link>
             <Link
-              href="/betting-tips"
+              href="#tips"
               onClick={closeMobileMenu}
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
             >
               Betting tips
             </Link>
             <Link
-              href="/match-previews"
+              href="#"
               onClick={closeMobileMenu}
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
             >
               Match Previews
             </Link>
             <Link
-              href="/news"
+              href="#"
               onClick={closeMobileMenu}
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium py-2"
             >
@@ -149,8 +149,11 @@ const Header: React.FC = () => {
 
             {/* Mobile Login Button */}
             <div className="pt-4 border-t border-gray-700">
-              <Link href="/login" onClick={closeMobileMenu}>
-                <button className="w-full bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-full transition-all duration-200">
+              <Link
+                href="https://user.matchplug.com/auth/login"
+                onClick={closeMobileMenu}
+              >
+                <button className="w-full bg-white hover:bg-gray-100 text-black font-semibold px-6 py-2 rounded-full transition-all duration-200 cursor-pointer">
                   Login
                 </button>
               </Link>

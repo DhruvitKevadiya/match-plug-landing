@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Button from "../ui/Button";
 import { CountdownBox } from "./VipRecordsSection";
@@ -97,8 +98,12 @@ const Hero: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row sm:gap-6 gap-4  ">
-            <Button>Subscribe Now</Button>
-            <Button variant="secondary">Get Free Tips</Button>
+            <Link href="https://user.matchplug.com/auth/login">
+              <Button className="cursor-pointer">Subscribe Now</Button>
+            </Link>
+            <Link href="https://user.matchplug.com/auth/register">
+              <Button variant="secondary">Get Free Tips</Button>
+            </Link>
           </div>
         </div>{" "}
         <div className="flex w-full items-center gap-4 sm:gap-3 pt-20    sm:pt-36 sm:flex-row flex-col max-w-[100rem] ">

@@ -364,7 +364,7 @@ const FootballPredictionTable = ({ title }: { title: string }) => {
   };
 
   return (
-    <section className="bg-[#F4F6FB] py-12 sm:py-24">
+    <section id="prediction" className="bg-[#F4F6FB] py-12 sm:py-24">
       <div className="max-w-6xl mx-auto sm:px-4 px-2">
         {/* Header with Navigation Arrows */}
         <div className="flex items-center justify-center mb-6 sm:mb-8 gap-5 sm:gap-20">

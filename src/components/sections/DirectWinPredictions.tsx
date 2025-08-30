@@ -1,7 +1,8 @@
 "use client";
+
+import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "../layout/Logo";
-import Button from "../ui/Button";
 
 interface PredictionCard {
   id: string;
@@ -9,6 +10,7 @@ interface PredictionCard {
   subtitle: string;
   accuracy: string;
   backgroundImage: string;
+  url: string;
 }
 
 interface PredictionData {
@@ -37,6 +39,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "78% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "2",
@@ -45,6 +48,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "78% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "3",
@@ -53,14 +57,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "78% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      },
-      {
-        id: "4",
-        title: "Goal First Half",
-        subtitle: "5-6 Wins from the last 7 games",
-        accuracy: "78% Accurate",
-        backgroundImage:
-          "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "5",
@@ -69,40 +66,54 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "78% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
-        id: "111",
-        title: "Over 2.5 Goals",
+        id: "111111",
+        title: "Over 1.5 Goals",
         subtitle: "5-6 Wins from the last 7 games",
         accuracy: "78% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
+      },
+      {
+        id: "111",
+        title: "Under 2.5 Goals",
+        subtitle: "5-6 Wins from the last 7 games",
+        accuracy: "78% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
+      },
+      {
+        id: "4",
+        title: "Goal First Half",
+        subtitle: "5-6 Wins from the last 7 games",
+        accuracy: "78% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "222",
-        title: "BTTS / GG",
+        title: "Handicap",
         subtitle: "5-6 Wins from the last 7 games",
         accuracy: "78% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      },
-      {
-        id: "333",
-        title: "Mix Chance",
-        subtitle: "5-6 Wins from the last 7 games",
-        accuracy: "78% Accurate",
-        backgroundImage:
-          "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
     ],
     riskyTipsMarkets: [
       {
         id: "6",
-        title: "High Risk Combo",
+        title: "Draw",
         subtitle: "4-5 Wins from the last 7 games",
         accuracy: "65% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "7",
@@ -111,56 +122,99 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "55% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "8",
-        title: "Half Time Score",
+        title: "Cards",
         subtitle: "4-5 Wins from the last 7 games",
         accuracy: "62% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "9",
-        title: "Double Chance",
+        title: "High Risk Single",
         subtitle: "4-5 Wins from the last 7 games",
         accuracy: "68% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1577223625816-7546f13df25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
     ],
     specialTipsMarkets: [
       {
         id: "10",
-        title: "VIP Special",
+        title: "Free Kicks",
         subtitle: "6-7 Wins from the last 7 games",
         accuracy: "85% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "11",
-        title: "Premium Pick",
+        title: "Fouls",
         subtitle: "5-6 Wins from the last 7 games",
         accuracy: "80% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "12",
-        title: "Expert Choice",
+        title: "Shots",
         subtitle: "6-6 Wins from the last 7 games",
         accuracy: "88% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "13",
-        title: "Guaranteed Win",
+        title: "Shots On Target",
         subtitle: "7-7 Wins from the last 7 games",
         accuracy: "92% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
+      },
+      {
+        id: "1541323",
+        title: "Throw INS",
+        subtitle: "7-7 Wins from the last 7 games",
+        accuracy: "92% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
+      },
+      {
+        id: "653241653254",
+        title: "Tackles",
+        subtitle: "7-7 Wins from the last 7 games",
+        accuracy: "92% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
+      },
+      {
+        id: "43348954",
+        title: "Corners",
+        subtitle: "7-7 Wins from the last 7 games",
+        accuracy: "92% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
+      },
+      {
+        id: "098765456789",
+        title: "Goal Kicks",
+        subtitle: "7-7 Wins from the last 7 games",
+        accuracy: "92% Accurate",
+        backgroundImage:
+          "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
     ],
     americaSportsPicks: [
@@ -171,6 +225,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "75% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "15",
@@ -179,6 +234,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "72% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "16",
@@ -187,6 +243,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "76% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
       {
         id: "17",
@@ -195,6 +252,7 @@ const DirectWinPredictions: React.FC = () => {
         accuracy: "70% Accurate",
         backgroundImage:
           "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        url: "#",
       },
     ],
   };
@@ -250,9 +308,11 @@ const DirectWinPredictions: React.FC = () => {
           </div>
           <div className="flex flex-col gap-2 items-center justify-center">
             <p className="text-white font-semibold text-lg">{card.accuracy}</p>
-            <button className="bg-white hover:bg-gray-100 text-black font-bold py-2 px-6 rounded-full  transition-all duration-200 transform hover:scale-105">
-              Bet Now
-            </button>
+            <Link href={card.url}>
+              <button className="bg-white hover:bg-gray-100 text-black font-bold py-2 px-6 rounded-full  transition-all duration-200 transform hover:scale-105 cursor-pointer">
+                Bet Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -260,7 +320,7 @@ const DirectWinPredictions: React.FC = () => {
   );
 
   return (
-    <section className=" py-16 relative">
+    <section id="tips" className=" py-16 relative">
       <div className="absolute inset-0 z-0">
         <img src="/bg1.png" alt="" className="h-full w-full bg-cover" />
       </div>

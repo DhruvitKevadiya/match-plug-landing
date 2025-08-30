@@ -147,6 +147,7 @@ const LatestNewsSection: React.FC = () => {
 
   return (
     <section
+      id="news"
       className="py-20"
       style={{ backgroundColor: "rgba(243, 244, 233, 0.59)" }}
     >
